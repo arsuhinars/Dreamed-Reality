@@ -1,0 +1,45 @@
+.game-hint {
+    padding: 12px;
+    border-radius: 32px;
+    flex-direction: row;
+    align-items: center;
+    width: 420px;
+    background-color: rgba(48, 57, 82, 0.8);
+}
+
+.game-hint-container {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 64px;
+}
+
+.game-hint__icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.game-hint__text-container {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+}
+
+.game-btn {
+    padding: 12px;
+    border-radius: 16px;
+    border-width: 0;
+    background-color: rgba(48, 57, 82, 0.8);
+    transition-property: scale, background-color;
+    transition-duration: 0.2s;
+}
+
+.game-btn:hover {
+    background-color: rgba(67, 79, 113, 0.8);
+    scale: 1.1;
+}
+
+.game-btn:active {
+    background-color: rgba(48, 57, 82, 0.8);
+    scale: 0.9;
+}

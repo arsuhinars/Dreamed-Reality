@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/GameViewStyle.uss?fileID=7433441132597879392&amp;guid=f9540ae3826472943bc30185df3aa51b&amp;type=3#GameViewStyle" />
+    <ui:VisualElement class="game-container">
+        <ui:VisualElement style="flex-direction: row; justify-content: flex-end;">
+            <ui:Button name="PauseButton" class="game-btn">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/pause.png?fileID=21300000&amp;guid=589709d058896fd4daa5a5f2c7c83df9&amp;type=3#pause&apos;);" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement class="game-hint-container">
+            <ui:VisualElement class="container game-hint" style="display: none;">
+                <ui:VisualElement class="game-hint__icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/information.png?fileID=21300000&amp;guid=d57363a7603d20747849b817e4ccdd25&amp;type=3#information&apos;);" />
+                <ui:VisualElement class="game-hint__text-container">
+                    <ui:Label tabindex="-1" text="Title" class="text-header" />
+                    <ui:Label tabindex="-1" text="Hint description" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

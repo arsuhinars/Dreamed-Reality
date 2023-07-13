@@ -1,0 +1,38 @@
+.popup-view {
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+.popup-view .menu-container {
+    transition-property: scale;
+    transition-duration: 0.2s;
+}
+
+.popup-view.view-showed {
+    opacity: 1;
+}
+
+.popup-view.view-showed .menu-container {
+    scale: 1;
+}
+
+.popup-view.view-hidden {
+    opacity: 0;
+}
+
+.popup-view.view-hidden .menu-container {
+    scale: 0.9;
+}
+
+.fade-view {
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+.fade-view.view-showed {
+    opacity: 1;
+}
+
+.fade-view.view-hidden {
+    opacity: 0;
+}

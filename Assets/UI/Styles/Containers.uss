@@ -1,0 +1,24 @@
+.menu-container {
+    padding: 16px;
+    border-radius: 32px;
+    background-color: rgba(48, 57, 82, 0.8);
+    flex-direction: column;
+    width: 360px;
+    -unity-text-align: middle-center;
+}
+
+.background-container {
+    padding: 32px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(48, 57, 82, 0.4);
+}
+
+.game-container {
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+}

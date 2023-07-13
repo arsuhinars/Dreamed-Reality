@@ -1,0 +1,4 @@
+.text-header {
+    font-size: 30px;
+    -unity-font-style: bold;
+}
