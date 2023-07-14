@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a302d807fedc543409dd05ab13483ebb, type: 3}
-  m_Name: PlayerSettings
+  m_Name: PlayerCharacterSettings
   m_EditorClassIdentifier: 
   maxMoveForce: 2000
   flyMoveForce: 500
-  jumpImpulse: 200
+  jumpImpulse: 300
   rotationSmoothTime: 0.2
   groundDrag: {x: 7, y: 7, z: 7}
-  airDrag: {x: 3, y: 0.5, z: 3}
+  airDrag: {x: 3, y: 0.1, z: 3}
   maxSlopeAngle: 45
   groundMask:
     serializedVersion: 2
