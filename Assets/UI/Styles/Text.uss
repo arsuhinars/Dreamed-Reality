@@ -1,4 +1,11 @@
 .text-header {
+    margin: 0;
     font-size: 30px;
     -unity-font-style: bold;
+}
+
+.text-normal {
+    margin: 0;
+    font-size: 20px;
+    -unity-font-style: normal;
 }

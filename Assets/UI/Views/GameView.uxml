@@ -7,13 +7,14 @@
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement class="game-hint-container">
-            <ui:VisualElement class="container game-hint" style="display: none;">
-                <ui:VisualElement class="game-hint__icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/information.png?fileID=21300000&amp;guid=d57363a7603d20747849b817e4ccdd25&amp;type=3#information&apos;);" />
-                <ui:VisualElement class="game-hint__text-container">
-                    <ui:Label tabindex="-1" text="Title" class="text-header" />
-                    <ui:Label tabindex="-1" text="Hint description" />
+            <DreamedReality.UI.Elements.UIHint name="GameHint" class="game-hint">
+                <ui:VisualElement class="game-hint__prompt-container">
+                    <ui:Label name="PromptText" tabindex="-1" text="Esc" class="text-header" />
                 </ui:VisualElement>
-            </ui:VisualElement>
+                <ui:VisualElement class="game-hint__text-container">
+                    <ui:Label name="HintText" tabindex="-1" text="Hint description" class="text-normal" />
+                </ui:VisualElement>
+            </DreamedReality.UI.Elements.UIHint>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
