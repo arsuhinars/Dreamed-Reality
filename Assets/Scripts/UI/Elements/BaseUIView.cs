@@ -2,17 +2,17 @@ using UnityEngine.UIElements;
 
 namespace DreamedReality.UI.Elements
 {
-    public enum ViewState
-    {
-        None, Showed, Hidden
-    }
-
     public class BaseUIView : VisualElement
     {
         private const string SHOWED_USS_CLASS = "view-showed";
         private const string HIDDEN_USS_CLASS = "view-hidden";
 
         public new class UxmlFactory : UxmlFactory<BaseUIView> { }
+
+        private enum ViewState
+        {
+            None, Showed, Hidden
+        }
 
         public bool IsShowed => m_state == ViewState.Showed;
 

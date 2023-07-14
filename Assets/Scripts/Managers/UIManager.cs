@@ -11,9 +11,11 @@ namespace DreamedReality.Managers
 
         [SerializeField] private UIDocument m_document;
         [SerializeField] private string m_viewsContainerName;
+        [SerializeField] private string m_hintElementName;
 
         private KeyValuePair<string, BaseUIView> m_currView = new("", null);
         private Dictionary<string, BaseUIView> m_viewsByName;
+        private UIHint m_hintElement;
 
         public void SetView(string viewName)
         {
@@ -37,6 +39,18 @@ namespace DreamedReality.Managers
             }
         }
 
+        public void ShowHint(string inputPrompt, string text)
+        {
+            m_hintElement.InputPrompt = inputPrompt;
+            m_hintElement.Text = text;
+            m_hintElement.Show();
+        }
+
+        public void HideHint()
+        {
+            m_hintElement.Hide();
+        }
+
         private void Awake()
         {
             if (Instance == null)
@@ -52,8 +66,9 @@ namespace DreamedReality.Managers
 
         private void Start()
         {
-            FindViews();
+            FindElements();
             HideAllViews();
+            HideHint();
         }
 
         private void OnDestroy()
@@ -64,7 +79,7 @@ namespace DreamedReality.Managers
             }
         }
         
-        private void FindViews()
+        private void FindElements()
         {
             m_viewsByName = new();
 
@@ -79,6 +94,8 @@ namespace DreamedReality.Managers
 
                 m_viewsByName.Add(view.name, view);
             }
+
+            m_hintElement = m_document.rootVisualElement.Q<UIHint>(m_hintElementName);
         }
     }
 }
