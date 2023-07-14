@@ -6,14 +6,20 @@ using UnityEngine.InputSystem;
 namespace DreamedReality.Controllers
 {
     [RequireComponent(typeof(CharacterEntity))]
+    [RequireComponent(typeof(InventoryController))]
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerController : MonoBehaviour
     {
+        public InventoryController Inventory => m_inventory;
+
         [SerializeField] private InputActionAsset m_actionAsset;
         [SerializeField] private CameraController m_playerCamera;
 
-        private PlayerInput m_playerInput;
         private CharacterEntity m_char;
+        private InventoryController m_inventory;
+        private PlayerInput m_playerInput;
+
+        private UsableEntity m_activeUsableEntity;
 
         private InputAction m_pauseAction;
         private InputAction m_moveAction;
@@ -22,8 +28,9 @@ namespace DreamedReality.Controllers
 
         private void Awake()
         {
-            m_playerInput = GetComponent<PlayerInput>();
             m_char = GetComponent<CharacterEntity>();
+            m_inventory = GetComponent<InventoryController>();
+            m_playerInput = GetComponent<PlayerInput>();
         }
 
         private void Start()
@@ -55,6 +62,53 @@ namespace DreamedReality.Controllers
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.OnStart -= OnGameStart;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent<UsableEntity>(out var usableEntity))
+            {
+                if (!usableEntity.IsActive)
+                {
+                    return;
+                }
+
+                m_activeUsableEntity = usableEntity;
+
+                string itemTag = usableEntity.RequiredItemTag;
+                if (!string.IsNullOrEmpty(itemTag) && !m_inventory.HasItem(itemTag))
+                {
+                    UIManager.Instance.ShowHint(
+                        string.Empty, $"{itemTag} is required"
+                    );
+                }
+                else
+                {
+                    UIManager.Instance.ShowHint(
+                        GetActionDisplayName(m_useAction),
+                        usableEntity.UsageHintText
+                    );
+                }
+
+                return;
+            }
+
+            if (other.TryGetComponent<PickableEntity>(out var pickableEntity))
+            {
+                m_inventory.TryAddItem(pickableEntity);
+                return;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (
+                m_activeUsableEntity != null &&
+                other.gameObject == (m_activeUsableEntity as Component).gameObject
+            ) {
+                m_activeUsableEntity = null;
+                UIManager.Instance.HideHint();
             }
         }
 
@@ -91,9 +145,16 @@ namespace DreamedReality.Controllers
 
         private void HandleUseAction(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Canceled)
+            if (context.phase != InputActionPhase.Canceled || m_activeUsableEntity == null)
             {
-                Debug.Log("Use click");
+                return;
+            }
+
+            string itemTag = m_activeUsableEntity.RequiredItemTag;
+            if (string.IsNullOrEmpty(itemTag) || m_inventory.HasItem(itemTag))
+            {
+                m_inventory.ReleaseItem(itemTag);
+                m_activeUsableEntity.Use();
             }
         }
 
@@ -101,6 +162,16 @@ namespace DreamedReality.Controllers
         {
             m_char.Spawn();
             m_playerCamera.ResetPosition();
+        }
+
+        private string GetActionDisplayName(InputAction action)
+        {
+            int binding = action.GetBindingIndex(group: m_playerInput.currentControlScheme);
+            var displayName = action.bindings[binding].ToDisplayString(
+                out var deviceLayoutName, out var controlPath
+            );
+
+            return displayName;
         }
     }
 }
