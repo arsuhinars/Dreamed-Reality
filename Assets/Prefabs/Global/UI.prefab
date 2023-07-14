@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_document: {fileID: 8396371503638062554}
   m_viewsContainerName: ViewsContainer
+  m_hintElementName: GameHint
 --- !u!1 &2498238267936181783
 GameObject:
   m_ObjectHideFlags: 0
