@@ -62,9 +62,7 @@ namespace DreamedReality.Entities
 
         private void FixedUpdate()
         {
-            m_isGrounded = CheckIsGrounded();
-            m_averageGroundNormal = Vector3.zero;
-
+            GroundedRoutine();
             MovementRoutine();
             DragRoutine();
         }
@@ -93,15 +91,19 @@ namespace DreamedReality.Entities
             }
         }
 
-        private bool CheckIsGrounded()
+        private void GroundedRoutine()
         {
-            if (Mathf.Approximately(m_averageGroundNormal.sqrMagnitude, 0f))
+            if (!Mathf.Approximately(m_averageGroundNormal.sqrMagnitude, 0f))
             {
-                return false;
+                float slopeAngle = Vector3.Angle(Vector3.up, m_averageGroundNormal);
+                m_isGrounded = slopeAngle < m_settings.maxSlopeAngle;
+            }
+            else
+            {
+                m_isGrounded = false;
             }
 
-            float slopeAngle = Vector3.Angle(Vector3.up, m_averageGroundNormal);
-            return slopeAngle < m_settings.maxSlopeAngle;
+            m_averageGroundNormal = Vector3.zero;
         }
 
         private void MovementRoutine()
