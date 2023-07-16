@@ -9,6 +9,8 @@ namespace DreamedReality.Managers
     {
         public static UIManager Instance { get; private set; } = null;
 
+        public UIHint UIHint => m_hintElement;
+
         [SerializeField] private UIDocument m_document;
         [SerializeField] private string m_viewsContainerName;
         [SerializeField] private string m_hintElementName;
@@ -39,18 +41,6 @@ namespace DreamedReality.Managers
             }
         }
 
-        public void ShowHint(string inputPrompt, string text)
-        {
-            m_hintElement.InputPrompt = inputPrompt;
-            m_hintElement.Text = text;
-            m_hintElement.Show();
-        }
-
-        public void HideHint()
-        {
-            m_hintElement.Hide();
-        }
-
         private void Awake()
         {
             if (Instance == null)
@@ -68,7 +58,6 @@ namespace DreamedReality.Managers
         {
             FindElements();
             HideAllViews();
-            HideHint();
         }
 
         private void OnDestroy()
