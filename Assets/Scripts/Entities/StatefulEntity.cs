@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using DreamedReality.Managers;
+using DreamedReality.Tweeners;
+using DreamedReality.Utils;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace DreamedReality.Entities
 {
@@ -9,15 +14,31 @@ namespace DreamedReality.Entities
             get => m_state;
             set
             {
-                if (value != m_state)
+                if (value == m_state)
                 {
-                    m_state = value;
-                    OnStateChange(value);
+                    return;
+                }
+
+                m_state = value;
+                OnStateChange(value);
+
+                if (value)
+                {
+                    m_tweener.Value?.PlayIn();
+                }
+                else
+                {
+                    m_tweener.Value?.PlayOut();
                 }
             }
         }
 
         [SerializeField] private bool m_initialState;
+        [SerializeField]
+        private SerializedInterface<IStatefulTweener> m_tweener;
+        [Space]
+        [SerializeField] private UnityEvent OnTurnOn;
+        [SerializeField] private UnityEvent OnTurnOff;
 
         private bool m_state;
 
@@ -26,11 +47,28 @@ namespace DreamedReality.Entities
             State = !m_state;
         }
 
-        protected virtual void Start()
+        protected virtual void OnStateChange(bool state) { }
+
+        protected virtual void OnStart() { }
+
+        private void Start()
         {
-            State = m_initialState;
+            GameManager.Instance.OnStart += OnGameStart;
         }
 
-        protected virtual void OnStateChange(bool state) { }
+        private void OnDestroy()
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnStart -= OnGameStart;
+            }
+        }
+
+        private void OnGameStart()
+        {
+            State = m_initialState;
+            m_tweener.Value?.Complete();
+            OnStart();
+        }
     }
 }

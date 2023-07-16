@@ -16,6 +16,7 @@ namespace DreamedReality.Entities
         private CapsuleCollider m_collider;
 
         private Vector2 m_moveVec;
+        private float m_moveTargetRot;
         private float m_moveRot;
         private float m_moveAngleSpeed;
 
@@ -26,19 +27,27 @@ namespace DreamedReality.Entities
 
         public void Spawn()
         {
-            m_rb.velocity = Vector3.zero;
-            m_rb.angularVelocity = Vector3.zero;
-
-            m_moveVec = Vector2.zero;
-            m_moveRot = transform.rotation.eulerAngles.y;
-            m_moveAngleSpeed = 0f;
-
             m_isAlive = true;
         }
 
         public void Kill()
         {
             m_isAlive = false;
+        }
+
+        public void TeleportTo(Vector3 position, Quaternion rotation)
+        {
+            transform.SetPositionAndRotation(position, rotation);
+
+            m_rb.position = position;
+            m_rb.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
+            m_rb.velocity = Vector3.zero;
+            m_rb.angularVelocity = Vector3.zero;
+
+            m_moveVec = Vector2.zero;
+            m_moveRot = rotation.eulerAngles.y;
+            m_moveTargetRot = m_moveRot;
+            m_moveAngleSpeed = 0f;
         }
 
         public void Jump()
@@ -62,6 +71,11 @@ namespace DreamedReality.Entities
 
         private void FixedUpdate()
         {
+            if (!m_isAlive)
+            {
+                return;
+            }
+
             GroundedRoutine();
             MovementRoutine();
             DragRoutine();
@@ -108,13 +122,14 @@ namespace DreamedReality.Entities
 
         private void MovementRoutine()
         {
-            if (!Mathf.Approximately(m_moveVec.sqrMagnitude, 0f))
+            if (!Mathf.Approximately(m_moveVec.sqrMagnitude, 0f) && m_isGrounded)
             {
-                float targetRot = Mathf.Atan2(m_moveVec.y, m_moveVec.x) * Mathf.Rad2Deg;
-                m_moveRot = Mathf.SmoothDampAngle(
-                    m_moveRot, targetRot, ref m_moveAngleSpeed, m_settings.rotationSmoothTime
-                );
+                m_moveTargetRot = Mathf.Atan2(m_moveVec.x, m_moveVec.y) * Mathf.Rad2Deg;
             }
+
+            m_moveRot = Mathf.SmoothDampAngle(
+                m_moveRot, m_moveTargetRot, ref m_moveAngleSpeed, m_settings.rotationSmoothTime
+            );
 
             float forceMagnitude = m_isGrounded ? m_settings.maxMoveForce : m_settings.flyMoveForce;
 
