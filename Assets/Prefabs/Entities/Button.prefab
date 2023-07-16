@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7596607058790228214}
-  - component: {fileID: 7514740402976061448}
+  - component: {fileID: 6029923909444584194}
+  - component: {fileID: 6330022473581739875}
   - component: {fileID: 860796515521383177}
   - component: {fileID: 8109461993946274803}
   - component: {fileID: 6780419992148581132}
@@ -39,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7514740402976061448
+--- !u!114 &6029923909444584194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,17 +49,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 213619901110706153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04952e3ed117e74a87fdc62b84f6644, type: 3}
+  m_Script: {fileID: 11500000, guid: c0a8de802f70c024b824aac2fb26272a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isActive: 1
+  m_isInitiallyActive: 1
+  m_disableOnUse: 0
   m_usageHintText: Click on button
   m_requiredItemTag: 
   m_onUse:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6330022473581739875}
+        m_TargetAssemblyTypeName: DreamedReality.Tweeners.ButtonTweener, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6330022473581739875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213619901110706153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65536cd346d10dd4ca77ac092fe45508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_settings: {fileID: 11400000, guid: 9ec7380dc44f09847abbf41178676a86, type: 2}
-  m_buttonTransform: {fileID: 6508642284799556423}
+  m_targetTransform: {fileID: 6508642284799556423}
 --- !u!114 &860796515521383177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +435,7 @@ GameObject:
   - component: {fileID: 4484120518120447938}
   - component: {fileID: 7699946796916499095}
   m_Layer: 0
-  m_Name: Clicker
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
