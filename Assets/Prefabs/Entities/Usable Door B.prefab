@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4438608627846510658
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4328599985187121781, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_Name
+      value: Usable Door B
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720149954106596007, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4328599985187121781, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 7865744265508117396}
+    - targetCorrespondingSourceObject: {fileID: 4328599985187121781, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2859332373399072208}
+  m_SourcePrefab: {fileID: 100100000, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+--- !u!1 &111285725417214519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4328599985187121781, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+  m_PrefabInstance: {fileID: 4438608627846510658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7865744265508117396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111285725417214519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a8de802f70c024b824aac2fb26272a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isInitiallyActive: 1
+  m_disableOnUse: 0
+  m_usageHintText: Open/Close door
+  m_requiredItemTag: 
+  m_onUse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7686705889385074616}
+        m_TargetAssemblyTypeName: DreamedReality.Entities.StatefulEntity, Assembly-CSharp
+        m_MethodName: ToggleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!135 &2859332373399072208
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111285725417214519}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.2
+  m_Center: {x: 0, y: 1.375, z: 0}
+--- !u!114 &7686705889385074616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6284123745421703162, guid: e4db0ed0eeaa1b740a806bbf9d821d6c, type: 3}
+  m_PrefabInstance: {fileID: 4438608627846510658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111285725417214519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b4cb3c65e8218418e6460d474a3b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
