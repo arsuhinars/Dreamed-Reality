@@ -15,7 +15,7 @@ MonoBehaviour:
   maxMoveForce: 2000
   flyMoveForce: 500
   jumpImpulse: 300
-  rotationSmoothTime: 0.2
+  rotationSmoothTime: 0.1
   groundDrag: {x: 7, y: 7, z: 7}
   airDrag: {x: 3, y: 0.1, z: 3}
   maxSlopeAngle: 45
