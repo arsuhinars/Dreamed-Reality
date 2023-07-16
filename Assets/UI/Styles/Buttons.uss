@@ -1,35 +1,30 @@
 
 .btn {
     padding: 12px;
-    margin: 8px;
-    margin-top: 18px;
+    margin-top: 16px;
     border-radius: 16px;
-    border-color: rgb(69, 88, 188);
+    border-width: 0;
     background-color: rgb(84, 109, 229);
     font-size: 20px;
 
-    transition-property: margin, border-width, background-color;
+    transition-property: scale, background-color;
     transition-duration: 0.2s;
 }
 
-.btn:hover {
-    margin: 0;
-    margin-top: 10px;
-    border-width: 8px;
-    border-color: rgb(69, 88, 188);
+.btn:focus {
     background-color: rgb(99, 123, 244);
 }
 
-.btn:active {
-    margin: 8px;
-    margin-top: 18px;
-    border-width: 0px;
-    background-color: rgb(69, 88, 188);
+.btn:hover {
+    border-width: 0;
+    background-color: rgb(99, 123, 244);
+    scale: 1.02;
 }
 
-.btn:focus {
-    border-color: rgb(69, 88, 188);
-    background-color: rgb(84, 109, 229);
+.btn:active {
+    border-width: 0;
+    background-color: rgb(69, 88, 188);
+    scale: 0.98;
 }
 
 .btn-icon {

@@ -8,12 +8,8 @@
         </ui:VisualElement>
         <ui:VisualElement class="game-hint-container">
             <DreamedReality.UI.Elements.UIHint name="GameHint" class="game-hint">
-                <ui:VisualElement class="game-hint__prompt-container">
-                    <ui:Label name="PromptText" tabindex="-1" text="Esc" class="text-header" />
-                </ui:VisualElement>
-                <ui:VisualElement class="game-hint__text-container">
-                    <ui:Label name="HintText" tabindex="-1" text="Hint description" class="text-normal" />
-                </ui:VisualElement>
+                <ui:VisualElement name="HintPrompt" class="hint__use-prompt" />
+                <ui:Label name="HintText" tabindex="-1" text="Hint description" class="text-normal" />
             </DreamedReality.UI.Elements.UIHint>
         </ui:VisualElement>
     </ui:VisualElement>

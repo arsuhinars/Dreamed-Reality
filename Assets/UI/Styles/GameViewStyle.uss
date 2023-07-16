@@ -1,8 +1,33 @@
+
+.game-btn {
+    padding: 12px;
+    border-radius: 16px;
+    border-width: 0;
+    background-color: rgba(48, 57, 82, 0.8);
+    transition-property: scale, background-color;
+    transition-duration: 0.2s;
+}
+
+.game-btn:hover {
+    background-color: rgba(67, 79, 113, 0.8);
+    scale: 1.05;
+}
+
+.game-btn:active {
+    background-color: rgba(48, 57, 82, 0.8);
+    scale: 0.95;
+}
+
+.game-hint-container {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 64px;
+}
+
 .game-hint {
     flex-direction: row;
     align-items: center;
     max-width: 420px;
-    
     transition-property: opacity, translate;
     transition-duration: 0.2s;
 }
@@ -16,35 +41,16 @@
     translate: 0 16px;
 }
 
-.game-hint-container {
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 64px;
+.hint__use-prompt {
+    background-image: url('project://database/Assets/UI/Icons/Prompts/keyboardUseAction.png?fileID=21300000&guid=862ac4eec09c08342ad1fac59d615df3&type=3#keyboardUseAction');
+    width: 50px;
+    height: 50px;
 }
 
-.game-hint__prompt-container {
-    margin-right: 24px;
+.hint__none-prompt {
+    display: none;
 }
 
-.game-hint__text-container {
-    
-}
-
-.game-btn {
-    padding: 12px;
-    border-radius: 16px;
-    border-width: 0;
-    background-color: rgba(48, 57, 82, 0.8);
-    transition-property: scale, background-color;
-    transition-duration: 0.2s;
-}
-
-.game-btn:hover {
-    background-color: rgba(67, 79, 113, 0.8);
-    scale: 1.1;
-}
-
-.game-btn:active {
-    background-color: rgba(48, 57, 82, 0.8);
-    scale: 0.9;
+.hint__text {
+    margin-left: 16px;
 }

@@ -13,6 +13,8 @@ namespace DreamedReality.UI.Elements
         private const string NONE_PROMPT_USS_CLASS = "hint__none-prompt";
         private const string USE_PROMPT_USS_CLASS = "hint__use-prompt";
 
+        private const string HINT_TEXT_USS_CLASS = "hint__text";
+
         public new class UxmlFactory : UxmlFactory<UIHint> { }
 
         public enum PromptIconType
@@ -88,6 +90,7 @@ namespace DreamedReality.UI.Elements
             }
 
             m_state = HintState.Hidden;
+            m_isTransitioning = true;
             EnableInClassList(SHOWED_USS_CLASS, false);
             EnableInClassList(HIDDEN_USS_CLASS, true);
         }
@@ -106,6 +109,9 @@ namespace DreamedReality.UI.Elements
             m_textElement = this.Q<Label>(HINT_TEXT_NAME);
 
             UpdateElements();
+
+            Hide();
+            m_isTransitioning = false;
         }
 
         private void OnDetachFromPanel(DetachFromPanelEvent ev)
@@ -154,6 +160,7 @@ namespace DreamedReality.UI.Elements
 
             if (m_textElement != null)
             {
+                m_textElement.EnableInClassList(HINT_TEXT_USS_CLASS, true);
                 m_textElement.text = m_text;
             }
         }

@@ -3,6 +3,7 @@
         <ui:VisualElement class="menu-container">
             <ui:Label tabindex="-1" text="Pause" class="text-header" style="margin-bottom: 12px;" />
             <ui:Button text="Continue" name="ContinueButton" class="btn" />
+            <ui:Button text="Restart level" name="RestartButton" class="btn" />
             <ui:Button text="Quit to menu" name="QuitButton" class="btn" />
         </ui:VisualElement>
     </ui:VisualElement>
