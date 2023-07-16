@@ -4,13 +4,21 @@ namespace DreamedReality.UI.Elements
 {
     public class UIHint : VisualElement
     {
-        private const string PROMPT_TEXT_NAME = "PromptText";
+        private const string HINT_PROMPT_NAME = "HintPrompt";
         private const string HINT_TEXT_NAME = "HintText";
 
         private const string SHOWED_USS_CLASS = "hint-showed";
         private const string HIDDEN_USS_CLASS = "hint-hidden";
 
+        private const string NONE_PROMPT_USS_CLASS = "hint__none-prompt";
+        private const string USE_PROMPT_USS_CLASS = "hint__use-prompt";
+
         public new class UxmlFactory : UxmlFactory<UIHint> { }
+
+        public enum PromptIconType
+        {
+            None, UsePrompt
+        }
 
         private enum HintState
         {
@@ -18,22 +26,33 @@ namespace DreamedReality.UI.Elements
         }
 
         public bool IsShowed => m_state == HintState.Showed;
-        public string InputPrompt
+        public PromptIconType PromptIcon
         {
-            get => m_inputPrompt;
-            set => m_inputPrompt = value;
+            get => m_promptIcon;
+            set
+            {
+                m_promptIcon = value;
+                UpdateElements();
+            }
         }
         public string Text
         {
             get => m_text;
-            set => m_text = value;
+            set
+            {
+                m_text = value;
+                UpdateElements();
+            }
         }
 
-        private HintState m_state = HintState.None;
-        private string m_inputPrompt = string.Empty;
+        private PromptIconType m_promptIcon = PromptIconType.None;
         private string m_text = string.Empty;
 
-        private TextElement m_promptElement;
+        private HintState m_state = HintState.None;
+        private HintState m_nextState = HintState.None;
+        private bool m_isTransitioning = false;
+        
+        private VisualElement m_promptElement;
         private TextElement m_textElement;
 
         public void Show()
@@ -43,18 +62,28 @@ namespace DreamedReality.UI.Elements
                 return;
             }
 
+            if (m_isTransitioning)
+            {
+                m_nextState = HintState.Showed;
+                return;
+            }
+
             m_state = HintState.Showed;
+            m_isTransitioning = true;
             EnableInClassList(SHOWED_USS_CLASS, true);
             EnableInClassList(HIDDEN_USS_CLASS, false);
-
-            m_promptElement.text = m_inputPrompt;
-            m_textElement.text = m_text;
         }
 
         public void Hide()
         {
             if (m_state == HintState.Hidden)
             {
+                return;
+            }
+
+            if (m_isTransitioning)
+            {
+                m_nextState = HintState.Hidden;
                 return;
             }
 
@@ -73,8 +102,10 @@ namespace DreamedReality.UI.Elements
 
         private void OnAttachToPanel(AttachToPanelEvent ev)
         {
-            m_promptElement = this.Q<Label>(PROMPT_TEXT_NAME);
+            m_promptElement = this.Q<VisualElement>(HINT_PROMPT_NAME);
             m_textElement = this.Q<Label>(HINT_TEXT_NAME);
+
+            UpdateElements();
         }
 
         private void OnDetachFromPanel(DetachFromPanelEvent ev)
@@ -90,7 +121,41 @@ namespace DreamedReality.UI.Elements
 
         private void OnTransitionEnd(TransitionEndEvent ev)
         {
+            m_isTransitioning = false;
             style.display = m_state == HintState.Showed ? DisplayStyle.Flex : DisplayStyle.None;
+
+            switch (m_nextState)
+            {
+                case HintState.Showed:
+                    Show();
+                    break;
+                case HintState.Hidden:
+                    Hide();
+                    break;
+            }
+            m_nextState = HintState.None;
+        }
+
+        private void UpdateElements()
+        {
+            if (m_promptElement != null)
+            {
+                m_promptElement.EnableInClassList(NONE_PROMPT_USS_CLASS, false);
+                m_promptElement.EnableInClassList(USE_PROMPT_USS_CLASS, false);
+
+                var inputPromptUssClass = m_promptIcon switch
+                {
+                    PromptIconType.None => NONE_PROMPT_USS_CLASS,
+                    PromptIconType.UsePrompt => USE_PROMPT_USS_CLASS,
+                    _ => string.Empty,
+                };
+                m_promptElement.EnableInClassList(inputPromptUssClass, true);
+            }
+
+            if (m_textElement != null)
+            {
+                m_textElement.text = m_text;
+            }
         }
     }
 }
