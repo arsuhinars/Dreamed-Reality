@@ -1,5 +1,4 @@
-﻿using DG.Tweening;
-using DreamedReality.Managers;
+﻿using DreamedReality.Managers;
 using DreamedReality.Tweeners;
 using DreamedReality.Utils;
 using UnityEngine;
@@ -7,32 +6,8 @@ using UnityEngine.Events;
 
 namespace DreamedReality.Entities
 {
-    public class StatefulEntity : MonoBehaviour
+    public class StatefulEntity : AbstractStatefulEntity
     {
-        public bool State
-        {
-            get => m_state;
-            set
-            {
-                if (value == m_state)
-                {
-                    return;
-                }
-
-                m_state = value;
-                OnStateChange(value);
-
-                if (value)
-                {
-                    m_tweener.Value?.PlayIn();
-                }
-                else
-                {
-                    m_tweener.Value?.PlayOut();
-                }
-            }
-        }
-
         [SerializeField] private bool m_initialState;
         [SerializeField]
         private SerializedInterface<IStatefulTweener> m_tweener;
@@ -40,16 +15,19 @@ namespace DreamedReality.Entities
         [SerializeField] private UnityEvent OnTurnOn;
         [SerializeField] private UnityEvent OnTurnOff;
 
-        private bool m_state;
-
-        public void ToggleState()
+        protected override void OnStateChange(bool state)
         {
-            State = !m_state;
+            if (state)
+            {
+                m_tweener.Value?.PlayIn();
+                OnTurnOn?.Invoke();
+            }
+            else
+            {
+                m_tweener.Value?.PlayOut();
+                OnTurnOff?.Invoke();
+            }
         }
-
-        protected virtual void OnStateChange(bool state) { }
-
-        protected virtual void OnStart() { }
 
         private void Start()
         {
@@ -68,7 +46,6 @@ namespace DreamedReality.Entities
         {
             State = m_initialState;
             m_tweener.Value?.Complete();
-            OnStart();
         }
     }
 }
