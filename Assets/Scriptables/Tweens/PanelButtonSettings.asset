@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4bbfa4eaa8c8e54d9accf01f15b55cf, type: 3}
-  m_Name: Key
+  m_Script: {fileID: 11500000, guid: 00ea1bd568f529f4d823d97eb03ac234, type: 3}
+  m_Name: PanelButtonSettings
   m_EditorClassIdentifier: 
-  moveAmplitude: {x: 0, y: 0.2, z: 0}
-  movePeriod: 1
-  rotationPeriod: 3
+  buttonMoveOffset: {x: 0, y: 0, z: 0.0625}
+  buttonMoveDuration: 0.4
