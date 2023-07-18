@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8684333246318546295
 Transform:
@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7835975524474505313
 Transform:
@@ -79,13 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c987809b9b2183042bda5f8b12d372c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isInitiallyActive: 1
-  m_isDisposable: 0
   m_usageHintText: Go to bed
-  m_requiredItemTag: 
-  m_onUse:
-    m_PersistentCalls:
-      m_Calls: []
   m_bedLevelIndex: 0
   m_teleportTransform: {fileID: 8684333246318546295}
   m_targetBed: {fileID: 0}
@@ -190,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5419e293edc0d9d49b776793dd19b0cb, type: 3}
       propertyPath: m_Name
       value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5419e293edc0d9d49b776793dd19b0cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
