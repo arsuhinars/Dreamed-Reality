@@ -66,7 +66,9 @@ namespace DreamedReality.Entities
 
         private void Start()
         {
-            m_lowerCapsuleY = m_collider.center.y - m_collider.height * 0.5f + m_collider.radius;
+            m_lowerCapsuleY = m_collider.center.y;
+            m_lowerCapsuleY -= m_collider.height * 0.5f - m_collider.radius;
+            m_lowerCapsuleY -= m_collider.radius * Mathf.Cos(m_settings.maxSlopeAngle);
         }
 
         private void FixedUpdate()

@@ -75,6 +75,11 @@ namespace DreamedReality.Entities
 
         private void CreateTweens()
         {
+            if (!isActiveAndEnabled)
+            {
+                return;
+            }
+
             var moveTween = DOTween.Sequence();
             moveTween.Append(
                 m_model.DOLocalMove(
