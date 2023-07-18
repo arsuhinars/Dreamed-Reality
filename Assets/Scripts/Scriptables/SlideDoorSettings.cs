@@ -2,7 +2,7 @@
 
 namespace DreamedReality.Scriptables
 {
-    [CreateAssetMenu(fileName = "SlideDoorSettings", menuName = "Game/Entities/Slide Door Settings")]
+    [CreateAssetMenu(fileName = "SlideDoorSettings", menuName = "Game/Tweens/Slide Door Settings")]
     public class SlideDoorSettings : ScriptableObject
     {
         public Vector3 slideOffset;
