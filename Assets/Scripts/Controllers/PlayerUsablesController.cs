@@ -44,6 +44,7 @@ namespace DreamedReality.Controllers
         {
             if (other.TryGetComponent<AbstractUsableEntity>(out var entity))
             {
+                ClearCurrentUsableEntity();
                 SetCurrentUsableEntity(entity);
             }
         }
@@ -68,6 +69,11 @@ namespace DreamedReality.Controllers
 
         private void SetCurrentUsableEntity(AbstractUsableEntity entity)
         {
+            if (!entity.IsActive)
+            {
+                return;
+            }
+
             m_usableEntity = entity;
             m_usableEntity.OnStateChange += OnUsableEntityStateChange;
 
@@ -76,7 +82,7 @@ namespace DreamedReality.Controllers
             if (!string.IsNullOrEmpty(itemTag) && !m_player.Inventory.HasItem(itemTag))
             {
                 uiHint.PromptIcon = UIHint.PromptIconType.None;
-                uiHint.Text = $"{itemTag} is required";
+                uiHint.Text = $"<style=\"Strong\">{itemTag}</style> is required";
             }
             else
             {

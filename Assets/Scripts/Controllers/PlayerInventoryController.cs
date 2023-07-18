@@ -46,7 +46,12 @@ namespace DreamedReality.Controllers
 
         private void Update()
         {
-            float angleStep = 2f * Mathf.PI / (m_items.Count + 1);
+            if (m_items.Count == 0)
+            {
+                return;
+            }
+
+            float angleStep = 2f * Mathf.PI / m_items.Count;
             int counter = 0;
             foreach (var entity in m_items.Values)
             {
