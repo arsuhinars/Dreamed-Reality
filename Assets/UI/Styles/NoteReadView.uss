@@ -1,0 +1,43 @@
+.note-container {
+    width: 400px;
+    background-color: rgb(212, 212, 212);
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-radius: 8px;
+}
+
+.note-text {
+    color: rgb(38, 38, 38);
+    white-space: normal;
+}
+
+.note-btn {
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    background-image: url('project://database/Assets/UI/Icons/cross.png?fileID=21300000&guid=4e2078c517ad1d249886cb01bc090639&type=3#cross');
+    -unity-background-image-tint-color: rgb(38, 38, 38);
+    border-width: 0;
+    transition-property: scale;
+    transition-duration: 0.15s;
+}
+
+.note-btn:hover {
+    background-color: transparent;
+    -unity-background-image-tint-color: rgb(54, 54, 54);
+    scale: 1.1;
+}
+
+.note-btn:active {
+    background-color: transparent;
+    -unity-background-image-tint-color: rgb(38, 38, 38);
+    scale: 0.9;
+}
+
+.note__close-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}

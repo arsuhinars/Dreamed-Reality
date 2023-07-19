@@ -3,7 +3,7 @@
     transition-duration: 0.2s;
 }
 
-.popup-view .menu-container {
+.popup-view .popup-target {
     transition-property: scale;
     transition-duration: 0.2s;
 }
@@ -12,7 +12,7 @@
     opacity: 1;
 }
 
-.popup-view.view-showed .menu-container {
+.popup-view.view-showed .popup-target {
     scale: 1;
 }
 
@@ -20,7 +20,7 @@
     opacity: 0;
 }
 
-.popup-view.view-hidden .menu-container {
+.popup-view.view-hidden .popup-target {
     scale: 0.9;
 }
 
