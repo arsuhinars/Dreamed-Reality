@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00ea1bd568f529f4d823d97eb03ac234, type: 3}
-  m_Name: PanelButtonSettings
+  m_Name: GroundButtonSettings
   m_EditorClassIdentifier: 
-  buttonMoveOffset: {x: 0, y: 0, z: 0.0625}
+  usageHintText: Click on button
+  buttonMoveOffset: {x: 0, y: -0.09375, z: 0}
   buttonMoveDuration: 0.4
