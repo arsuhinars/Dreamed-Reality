@@ -20,18 +20,22 @@ namespace DreamedReality.Managers
         public event Action<GameEndReason> OnEnd;
         public event Action OnPause;
         public event Action OnResume;
+        public event Action<string> OnReadNote;
 
         public static GameManager Instance { get; private set; } = null;
 
         public GameState State => m_state;
         public bool IsStarted => m_state == GameState.Started;
         public bool IsPaused => m_state == GameState.Paused;
+        public float GameTime => Time.time - m_gameStartTime;
 
         private GameState m_state = GameState.None;
+        private float m_gameStartTime;
 
         public void StartGame()
         {
             m_state = GameState.Started;
+            m_gameStartTime = Time.time;
             Time.timeScale = 1f;
 
             OnStart?.Invoke();
@@ -74,6 +78,14 @@ namespace DreamedReality.Managers
             Time.timeScale = 1f;
 
             OnResume?.Invoke();
+        }
+
+        public void ReadNote(string noteText)
+        {
+            m_state = GameState.Paused;
+            Time.timeScale = 0f;
+
+            OnReadNote?.Invoke(noteText);
         }
 
         private void Awake()

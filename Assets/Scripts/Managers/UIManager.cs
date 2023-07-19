@@ -33,6 +33,16 @@ namespace DreamedReality.Managers
             view.Show();
         }
 
+        public BaseUIView GetView(string viewName)
+        {
+            if (m_viewsByName.TryGetValue(viewName, out var view))
+            {
+                return view;
+            }
+
+            return null;
+        }
+
         public void HideAllViews()
         {
             foreach (var view in m_viewsByName.Values)

@@ -1,10 +1,13 @@
 using DreamedReality.Managers;
+using DreamedReality.UI.Views;
 using UnityEngine;
 
 namespace DreamedReality.Controllers
 {
     public class UIController : MonoBehaviour
     {
+        private NoteReadView m_noteReadView;
+
         private void Start()
         {
             var gameManager = GameManager.Instance;
@@ -12,6 +15,10 @@ namespace DreamedReality.Controllers
             gameManager.OnEnd += OnEnd;
             gameManager.OnPause += OnPause;
             gameManager.OnResume += OnResume;
+            gameManager.OnReadNote += OnReadNote;
+
+            var noteReadView = UIManager.Instance.GetView("NoteReadView");
+            m_noteReadView = noteReadView as NoteReadView;
         }
         
         private void OnDestroy()
@@ -23,6 +30,7 @@ namespace DreamedReality.Controllers
                 gameManager.OnEnd += OnEnd;
                 gameManager.OnPause += OnPause;
                 gameManager.OnResume += OnResume;
+                gameManager.OnReadNote -= OnReadNote;
             }
         }
 
@@ -44,6 +52,12 @@ namespace DreamedReality.Controllers
         private void OnResume()
         {
             UIManager.Instance.SetView("GameView");
+        }
+
+        private void OnReadNote(string noteText)
+        {
+            UIManager.Instance.SetView("NoteReadView");
+            m_noteReadView.Text = noteText;
         }
     }
 }
