@@ -6,6 +6,7 @@ namespace DreamedReality.Entities
 {
     public abstract class AbstractUsableEntity : MonoBehaviour
     {
+        public event Action OnUseAction;
         public event Action<bool> OnStateChange;
 
         public bool IsActive
@@ -46,6 +47,7 @@ namespace DreamedReality.Entities
             }
 
             OnUse(user);
+            OnUseAction?.Invoke();
         }
 
         protected abstract void OnUse(GameObject user);
