@@ -23350,11 +23350,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3674788677788612364, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674788677788612364, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3674788677788612364, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.5
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 3695181290273653927, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23396,6 +23400,30 @@ PrefabInstance:
       propertyPath: m_subLevels.Array.data[3].rootObject
       value: 
       objectReference: {fileID: 920162794}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273802941418465642, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6624798518937010238, guid: f6f8c985ab74e2247bd3e00e3d08d2e6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
