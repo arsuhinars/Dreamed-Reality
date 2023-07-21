@@ -1,3 +1,4 @@
+using DreamedReality.Managers;
 using DreamedReality.Scriptables;
 using UnityEngine;
 
@@ -60,7 +61,7 @@ namespace DreamedReality.Entities
 
         public void Jump()
         {
-            if (m_isGrounded)
+            if (m_isGrounded && GameManager.Instance.IsStarted)
             {
                 m_rb.AddForce(Vector3.up * m_settings.jumpImpulse, ForceMode.Impulse);
                 m_animator.SetTrigger(m_onJumpParamId);
