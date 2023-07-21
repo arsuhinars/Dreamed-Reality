@@ -4,6 +4,7 @@ using UnityEngine;
 namespace DreamedReality.Entities
 {
     [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Animator))]
     public class CharacterEntity : MonoBehaviour, ISpawnableEntity
     {
         public Vector2 MoveVector { get => m_moveVec; set => m_moveVec = value; }
@@ -14,6 +15,7 @@ namespace DreamedReality.Entities
 
         private Rigidbody m_rb;
         private CapsuleCollider m_collider;
+        private Animator m_animator;
 
         private Vector2 m_moveVec;
         private float m_moveTargetRot;
@@ -24,6 +26,12 @@ namespace DreamedReality.Entities
         private bool m_isGrounded = false;
         private float m_lowerCapsuleY;
         private Vector3 m_averageGroundNormal;
+        private float m_flyTime;
+
+        private int m_isGroundedParamId;
+        private int m_moveFactorParamId;
+        private int m_onJumpParamId;
+        private int m_flyTimeParamId;
 
         public void Spawn()
         {
@@ -55,6 +63,7 @@ namespace DreamedReality.Entities
             if (m_isGrounded)
             {
                 m_rb.AddForce(Vector3.up * m_settings.jumpImpulse, ForceMode.Impulse);
+                m_animator.SetTrigger(m_onJumpParamId);
             }
         }
 
@@ -62,6 +71,7 @@ namespace DreamedReality.Entities
         {
             m_rb = GetComponent<Rigidbody>();
             m_collider = GetComponentInChildren<CapsuleCollider>();
+            m_animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -69,6 +79,11 @@ namespace DreamedReality.Entities
             m_lowerCapsuleY = m_collider.center.y;
             m_lowerCapsuleY -= m_collider.height * 0.5f - m_collider.radius;
             m_lowerCapsuleY -= m_collider.radius * Mathf.Cos(m_settings.maxSlopeAngle);
+
+            m_isGroundedParamId = Animator.StringToHash("IsGrounded");
+            m_moveFactorParamId = Animator.StringToHash("MovingFactor");
+            m_onJumpParamId = Animator.StringToHash("OnJump");
+            m_flyTimeParamId = Animator.StringToHash("FlyTime");
         }
 
         private void FixedUpdate()
@@ -81,6 +96,7 @@ namespace DreamedReality.Entities
             GroundedRoutine();
             MovementRoutine();
             DragRoutine();
+            AnimatorRoutine();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -109,6 +125,15 @@ namespace DreamedReality.Entities
 
         private void GroundedRoutine()
         {
+            if (m_isGrounded)
+            {
+                m_flyTime = 0f;
+            }
+            else
+            {
+                m_flyTime += Time.fixedDeltaTime;
+            }
+
             if (!Mathf.Approximately(m_averageGroundNormal.sqrMagnitude, 0f))
             {
                 float slopeAngle = Vector3.Angle(Vector3.up, m_averageGroundNormal);
@@ -160,6 +185,13 @@ namespace DreamedReality.Entities
                 gravityDrag -= Physics.gravity;
                 m_rb.AddForce(gravityDrag, ForceMode.Acceleration);
             }
+        }
+
+        private void AnimatorRoutine()
+        {
+            m_animator.SetBool(m_isGroundedParamId, m_isGrounded);
+            m_animator.SetFloat(m_moveFactorParamId, m_moveVec.magnitude);
+            m_animator.SetFloat(m_flyTimeParamId, m_flyTime);
         }
     }
 }
