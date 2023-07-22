@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace DreamedReality.Tweeners
 {
-    public class RotatableDoorTweener : MonoBehaviour, IStatefulTweener
+    public class RotatableTweener : MonoBehaviour, IStatefulTweener
     {
-        [SerializeField] private RotatableDoorSettings m_settings;
+        [SerializeField] private RotatableTweenerSetting m_settings;
         [Space]
         [SerializeField] private Transform m_targetTransform;
 
@@ -16,10 +16,8 @@ namespace DreamedReality.Tweeners
         {
             m_activeTween?.Kill();
 
-            m_activeTween = m_targetTransform.DOLocalRotateQuaternion(
-                Quaternion.AngleAxis(
-                    m_settings.rotationAngle, Vector3.up
-                ),
+            m_activeTween = m_targetTransform.DOLocalRotate(
+                m_settings.rotationAngle,
                 m_settings.rotationDuration
             );
         }
@@ -28,8 +26,8 @@ namespace DreamedReality.Tweeners
         {
             m_activeTween?.Kill();
 
-            m_activeTween = m_targetTransform.DOLocalRotateQuaternion(
-                Quaternion.identity, m_settings.rotationDuration
+            m_activeTween = m_targetTransform.DOLocalRotate(
+                Vector3.zero, m_settings.rotationDuration
             );
         }
 

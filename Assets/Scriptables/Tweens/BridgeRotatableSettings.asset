@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2cce89695d153a48ac6ae53a841297d, type: 3}
-  m_Name: RotatableDoorSettings
+  m_Name: BridgeRotatableSettings
   m_EditorClassIdentifier: 
-  rotationAngle: {x: 0, y: 100, z: 0}
-  rotationDuration: 0.6
+  rotationAngle: {x: 0, y: 0, z: -50}
+  rotationDuration: 5

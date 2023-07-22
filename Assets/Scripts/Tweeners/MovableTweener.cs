@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace DreamedReality.Tweeners
 {
-    public class SlideDoorTweener : MonoBehaviour, IStatefulTweener
+    public class MoveableTweener : MonoBehaviour, IStatefulTweener
     {
-        [SerializeField] private SlideDoorSettings m_settings;
+        [SerializeField] private MovableTweenerSettings m_settings;
         [Space]
         [SerializeField] private Transform m_targetTransform;
 
