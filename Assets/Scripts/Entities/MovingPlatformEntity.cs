@@ -28,10 +28,10 @@ namespace DreamedReality.Entities
             {
                 CreateTween();
             }
-            else if (m_tween != null)
+            else
             {
-                m_pausedPhase = m_tween.position;
-                m_tween.Kill();
+                m_pausedPhase = m_tween != null ? m_tween.position : 0f;
+                m_tween?.Kill();
                 m_tween = null;
             }
         }
@@ -51,7 +51,7 @@ namespace DreamedReality.Entities
 
         private void OnEnable()
         {
-            if (GameManager.Instance != null)
+            if (GameManager.Instance != null && State)
             {
                 CreateTween();
             }
@@ -65,7 +65,7 @@ namespace DreamedReality.Entities
 
         private void OnGameStart()
         {
-            m_pausedPhase = 0f;
+            m_pausedPhase = -1f;
             State = m_initialState;
         }
 
@@ -91,10 +91,10 @@ namespace DreamedReality.Entities
             sequence.AppendInterval(m_waitTime);
             sequence.SetLoops(-1);
 
-            if (!Mathf.Approximately(m_pausedPhase, 0f))
+            if (m_pausedPhase >= 0f)
             {
                 sequence.Goto(m_pausedPhase, true);
-                m_pausedPhase = 0f;
+                m_pausedPhase = -1f;
             }
             else
             {

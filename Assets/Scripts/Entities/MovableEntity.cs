@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DreamedReality.Entities
 {
-    public class PushableEntity : AbstractStatefulEntity
+    public class MovableEntity : AbstractStatefulEntity
     {
         [SerializeField] private bool m_initialState;
         [Space]

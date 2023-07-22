@@ -6,7 +6,7 @@ namespace DreamedReality.Entities
     {
         public bool State
         {
-            get => m_state;
+            get => m_state ?? false;
             set
             {
                 if (value == m_state)
@@ -19,11 +19,11 @@ namespace DreamedReality.Entities
             }
         }
 
-        private bool m_state;
+        private bool? m_state;
 
         public void ToggleState()
         {
-            State = !m_state;
+            State = !m_state ?? true;
         }
 
         protected abstract void OnStateChange(bool state);
