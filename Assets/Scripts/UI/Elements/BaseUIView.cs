@@ -28,6 +28,7 @@ namespace DreamedReality.UI.Elements
             m_state = ViewState.Showed;
             EnableInClassList(SHOWED_USS_CLASS, true);
             EnableInClassList(HIDDEN_USS_CLASS, false);
+            UpdateInlineStyles();
 
             OnShow();
         }
@@ -50,6 +51,7 @@ namespace DreamedReality.UI.Elements
         {
             RegisterCallback<TransitionRunEvent>(OnTransitionRun);
             RegisterCallback<TransitionEndEvent>(OnTransitionEnd);
+            UpdateInlineStyles();
         }
 
         protected virtual void OnShow() { }
@@ -63,7 +65,21 @@ namespace DreamedReality.UI.Elements
 
         private void OnTransitionEnd(TransitionEndEvent ev)
         {
-            style.display = m_state == ViewState.Showed ? DisplayStyle.Flex : DisplayStyle.None;
+            UpdateInlineStyles();
+        }
+
+        private void UpdateInlineStyles()
+        {
+            if (m_state == ViewState.Showed)
+            {
+                style.display = DisplayStyle.Flex;
+                style.height = StyleKeyword.Initial;
+            }
+            else
+            {
+                style.display = DisplayStyle.None;
+                style.height = 0f;
+            }
         }
     }
 }

@@ -31,6 +31,22 @@ namespace DreamedReality.UI.Views
             RegisterCallback<DetachFromPanelEvent>(OnDetachFromPanel);
         }
 
+        protected override void OnShow()
+        {
+            if (GameManager.Instance.IsStarted || GameManager.Instance.IsPaused)
+            {
+                AudioManager.Instance.PlaySound(SfxType.NoteOpen);
+            }
+        }
+
+        protected override void OnHide()
+        {
+            if (GameManager.Instance.IsStarted || GameManager.Instance.IsPaused)
+            {
+                AudioManager.Instance.PlaySound(SfxType.NoteClose);
+            }
+        }
+
         private void OnAttachToPanel(AttachToPanelEvent ev)
         {
             m_closeButton = this.Q<Button>(CLOSE_BUTTON_NAME);
