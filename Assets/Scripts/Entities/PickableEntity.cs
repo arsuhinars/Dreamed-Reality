@@ -26,16 +26,22 @@ namespace DreamedReality.Entities
 
         public void Pickup()
         {
+            if (m_isPickedUp)
+            {
+                return;
+            }
+
             m_isPickedUp = true;
 
             KillTweens();
+            AudioManager.Instance.PlaySound(m_settings.pickupSfx, transform.position);
 
             m_model.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
 
         public void Release()
         {
-            ResetState();
+            //ResetState();
             gameObject.SetActive(false);
         }
 

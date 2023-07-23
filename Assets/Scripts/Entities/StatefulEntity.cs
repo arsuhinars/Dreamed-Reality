@@ -8,14 +8,18 @@ namespace DreamedReality.Entities
 {
     public class StatefulEntity : AbstractStatefulEntity
     {
+        protected override bool InitialState => m_initialState;
+
         [SerializeField] private bool m_initialState;
         [SerializeField]
         private SerializedInterface<IStatefulTweener> m_tweener;
+        [SerializeField] private SfxType m_turnOnSfx;
+        [SerializeField] private SfxType m_turnOffSfx;
         [Space]
         [SerializeField] private UnityEvent OnTurnOn;
         [SerializeField] private UnityEvent OnTurnOff;
 
-        protected override void OnStateChange(bool state)
+        protected override void OnStateChange(bool state, bool isInitial)
         {
             if (state)
             {
@@ -27,25 +31,15 @@ namespace DreamedReality.Entities
                 m_tweener.Value?.PlayOut();
                 OnTurnOff?.Invoke();
             }
-        }
 
-        private void Start()
-        {
-            GameManager.Instance.OnStart += OnGameStart;
-        }
-
-        private void OnDestroy()
-        {
-            if (GameManager.Instance != null)
+            if (!isInitial)
             {
-                GameManager.Instance.OnStart -= OnGameStart;
+                AudioManager.Instance.PlaySound(state ? m_turnOnSfx : m_turnOffSfx);
             }
-        }
-
-        private void OnGameStart()
-        {
-            State = m_initialState;
-            m_tweener.Value?.Complete();
+            else
+            {
+                m_tweener.Value?.Complete();
+            }
         }
     }
 }

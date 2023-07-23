@@ -40,6 +40,7 @@ namespace DreamedReality.Entities
             IsActive = false;
             m_isItemPut = true;
 
+            AudioManager.Instance.PlaySound(m_settings.usingSfx, transform.position);
             OnItemPut?.Invoke();
         }
 

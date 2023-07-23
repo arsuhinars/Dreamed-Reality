@@ -6,6 +6,8 @@ namespace DreamedReality.Entities
 {
     public class MovingPlatformEntity : AbstractStatefulEntity
     {
+        protected override bool InitialState => m_initialState;
+
         [SerializeField] private bool m_initialState;
         [Space]
         [SerializeField] private Transform m_model;
@@ -17,11 +19,16 @@ namespace DreamedReality.Entities
         private float m_pausedPhase;
         private Tween m_tween;
 
-        protected override void OnStateChange(bool state)
+        protected override void OnStateChange(bool state, bool isInitial)
         {
             if (!isActiveAndEnabled)
             {
                 return;
+            }
+
+            if (isInitial)
+            {
+                m_pausedPhase = -1f;
             }
 
             if (state)
@@ -33,19 +40,6 @@ namespace DreamedReality.Entities
                 m_pausedPhase = m_tween != null ? m_tween.position : 0f;
                 m_tween?.Kill();
                 m_tween = null;
-            }
-        }
-
-        private void Start()
-        {
-            GameManager.Instance.OnStart += OnGameStart;
-        }
-
-        private void OnDestroy()
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnStart += OnGameStart;
             }
         }
 
@@ -61,12 +55,6 @@ namespace DreamedReality.Entities
         {
             m_tween?.Kill();
             m_tween = null;
-        }
-
-        private void OnGameStart()
-        {
-            m_pausedPhase = -1f;
-            State = m_initialState;
         }
 
         private void CreateTween()

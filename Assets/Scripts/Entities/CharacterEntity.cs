@@ -19,6 +19,7 @@ namespace DreamedReality.Entities
         private Animator m_animator;
 
         private Vector2 m_moveVec;
+        private float m_moveVecLength;
         private float m_moveTargetRot;
         private float m_moveRot;
         private float m_moveAngleSpeed;
@@ -28,6 +29,7 @@ namespace DreamedReality.Entities
         private float m_lowerCapsuleY;
         private Vector3 m_averageGroundNormal;
         private float m_flyTime;
+        private float m_footstepTimer;
 
         private int m_isGroundedParamId;
         private int m_moveFactorParamId;
@@ -97,6 +99,7 @@ namespace DreamedReality.Entities
             GroundedRoutine();
             MovementRoutine();
             DragRoutine();
+            SoundsRoutine();
             AnimatorRoutine();
         }
 
@@ -126,6 +129,7 @@ namespace DreamedReality.Entities
 
         private void GroundedRoutine()
         {
+            bool prevIsGrounded = m_isGrounded;
             if (m_isGrounded)
             {
                 m_flyTime = 0f;
@@ -145,12 +149,20 @@ namespace DreamedReality.Entities
                 m_isGrounded = false;
             }
 
+            if (m_isGrounded && !prevIsGrounded)
+            {
+                AudioManager.Instance.PlaySound(
+                    SfxType.Footstep, transform.position
+                );
+            }
+
             m_averageGroundNormal = Vector3.zero;
         }
 
         private void MovementRoutine()
         {
-            if (!Mathf.Approximately(m_moveVec.sqrMagnitude, 0f) && m_isGrounded)
+            m_moveVecLength = m_moveVec.magnitude;
+            if (!Mathf.Approximately(m_moveVecLength, 0f) && m_isGrounded)
             {
                 m_moveTargetRot = Mathf.Atan2(m_moveVec.x, m_moveVec.y) * Mathf.Rad2Deg;
             }
@@ -188,10 +200,29 @@ namespace DreamedReality.Entities
             }
         }
 
+        private void SoundsRoutine()
+        {
+            if (Mathf.Approximately(m_moveVecLength, 0f) || !m_isGrounded)
+            {
+                return;
+            }
+
+            float delay = m_settings.footstepsDelay / m_moveVecLength;
+
+            m_footstepTimer += Time.fixedDeltaTime;
+            if (m_footstepTimer > delay)
+            {
+                AudioManager.Instance.PlaySound(
+                    SfxType.Footstep, transform.position
+                );
+                m_footstepTimer = 0f;
+            }
+        }
+
         private void AnimatorRoutine()
         {
             m_animator.SetBool(m_isGroundedParamId, m_isGrounded);
-            m_animator.SetFloat(m_moveFactorParamId, m_moveVec.magnitude);
+            m_animator.SetFloat(m_moveFactorParamId, m_moveVecLength);
             m_animator.SetFloat(m_flyTimeParamId, m_flyTime);
         }
     }

@@ -6,6 +6,8 @@ namespace DreamedReality.Entities
 {
     public class TrapdoorEntity : AbstractStatefulEntity
     {
+        protected override bool InitialState => m_initialState;
+
         [SerializeField] private bool m_initialState;
         [Space]
         [SerializeField] private Transform m_model;
@@ -18,27 +20,33 @@ namespace DreamedReality.Entities
         private float m_pausedPhase;
         private Tween m_tween;
 
-        protected override void OnStateChange(bool state)
+        protected override void OnStateChange(bool state, bool isInitial)
         {
-
-        }
-
-        private void Start()
-        {
-            GameManager.Instance.OnStart += OnGameStart;
-        }
-
-        private void OnDestroy()
-        {
-            if (GameManager.Instance != null)
+            if (!isActiveAndEnabled)
             {
-                GameManager.Instance.OnStart += OnGameStart;
+                return;
+            }
+
+            if (isInitial)
+            {
+                m_pausedPhase = -1f;
+            }
+
+            if (state)
+            {
+                CreateTween();
+            }
+            else
+            {
+                m_pausedPhase = m_tween != null ? m_tween.position : 0f;
+                m_tween?.Kill();
+                m_tween = null;
             }
         }
 
         private void OnEnable()
         {
-            if (GameManager.Instance != null)
+            if (GameManager.Instance != null && State)
             {
                 CreateTween();
             }
@@ -48,12 +56,6 @@ namespace DreamedReality.Entities
         {
             m_tween?.Kill();
             m_tween = null;
-        }
-
-        private void OnGameStart()
-        {
-            m_pausedPhase = 0f;
-            State = m_initialState;
         }
 
         private void CreateTween()
@@ -77,10 +79,10 @@ namespace DreamedReality.Entities
             sequence.AppendInterval(m_waitTime);
             sequence.SetLoops(-1);
 
-            if (!Mathf.Approximately(m_pausedPhase, 0f))
+            if (m_pausedPhase >= 0f)
             {
                 sequence.Goto(m_pausedPhase, true);
-                m_pausedPhase = 0f;
+                m_pausedPhase = -1f;
             }
             else
             {

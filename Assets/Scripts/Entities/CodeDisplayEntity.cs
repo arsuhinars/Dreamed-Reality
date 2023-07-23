@@ -29,6 +29,7 @@ namespace DreamedReality.Entities
             m_currCode = nextCode;
 
             PlayTween();
+            AudioManager.Instance.PlaySound(m_settings.usingSfx, transform.position);
         }
 
         private void Start()

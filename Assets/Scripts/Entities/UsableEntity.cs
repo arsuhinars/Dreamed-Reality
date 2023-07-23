@@ -1,4 +1,6 @@
 ﻿using DreamedReality.Managers;
+using DreamedReality.Tweeners;
+using DreamedReality.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,10 +16,15 @@ namespace DreamedReality.Entities
         [SerializeField] private string m_usageHintText;
         [SerializeField] private string m_requiredItemTag;
         [Space]
+        [SerializeField] private SerializedInterface<ITweener> m_tweener;
+        [SerializeField] private SfxType m_usingSfx;
+        [Space]
         [SerializeField] private UnityEvent m_onUse;
 
         protected override void OnUse(GameObject user)
         {
+            m_tweener.Value?.Play();
+            AudioManager.Instance.PlaySound(m_usingSfx, transform.position);
             m_onUse?.Invoke();
 
             if (m_disableOnUse)

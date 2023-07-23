@@ -6,15 +6,18 @@ namespace DreamedReality.Entities
 {
     public class MovableEntity : AbstractStatefulEntity
     {
+        protected override bool InitialState => m_initialState;
+
         [SerializeField] private bool m_initialState;
         [Space]
         [SerializeField] private Transform m_model;
         [SerializeField] private Vector3 m_pushOffset;
         [SerializeField] private float m_moveDuration;
+        [SerializeField] private SfxType m_moveSfx;
 
         private Tween m_tween;
 
-        protected override void OnStateChange(bool state)
+        protected override void OnStateChange(bool state, bool isInitial)
         {
             m_tween?.Kill();
 
@@ -27,7 +30,12 @@ namespace DreamedReality.Entities
                 m_tween = m_model.DOLocalMove(Vector3.zero, m_moveDuration);
             }
 
-            if (!isActiveAndEnabled)
+            if (!isInitial)
+            {
+                AudioManager.Instance.PlaySound(m_moveSfx, transform.position);
+            }
+
+            if (!isActiveAndEnabled || isInitial)
             {
                 m_tween.Complete();
                 m_tween.Kill();
@@ -35,30 +43,9 @@ namespace DreamedReality.Entities
             }
         }
 
-        private void Start()
-        {
-            GameManager.Instance.OnStart += OnGameStart;
-        }
-
-        private void OnDestroy()
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.OnStart -= OnGameStart;
-            }
-        }
-
         private void OnDisable()
         {
             m_tween?.Kill();
-            m_tween = null;
-        }
-
-        private void OnGameStart()
-        {
-            State = m_initialState;
-            m_tween.Complete();
-            m_tween.Kill();
             m_tween = null;
         }
     }
