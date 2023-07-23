@@ -2,8 +2,8 @@
     <ui:VisualElement class="background-container">
         <ui:VisualElement class="menu-container popup-target">
             <ui:Label tabindex="-1" text="You lose" name="LabelText" class="text-header" style="margin-bottom: 12px;" />
-            <ui:Button text="Retry" name="RetryButton" class="btn" />
-            <ui:Button text="Quit to menu" name="QuitButton" class="btn" />
+            <ui:Button text="Retry" name="RetryButton" class="btn play-click-sfx" />
+            <ui:Button text="Quit to menu" name="QuitButton" class="btn play-click-sfx" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

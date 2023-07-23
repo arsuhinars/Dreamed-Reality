@@ -4,13 +4,13 @@
     <ui:Template name="GameEndView" src="project://database/Assets/UI/Views/GameEndView.uxml?fileID=9197481963319205126&amp;guid=0b50a328979faff48bfbe1020e887f5f&amp;type=3#GameEndView" />
     <ui:Template name="NoteReadView" src="project://database/Assets/UI/Views/NoteReadView.uxml?fileID=9197481963319205126&amp;guid=77169c529b925924cb623d1518967058&amp;type=3#NoteReadView" />
     <ui:VisualElement name="ViewsContainer" style="flex-shrink: 0; flex-grow: 1;">
-        <DreamedReality.UI.Views.GameView name="GameView" picking-mode="Ignore" class="fill-screen fade-view">
+        <DreamedReality.UI.Views.GameView name="GameView" class="fill-screen fade-view">
             <ui:Instance template="GameView" style="flex-grow: 1;" />
         </DreamedReality.UI.Views.GameView>
-        <DreamedReality.UI.Views.PauseView name="PauseView" picking-mode="Ignore" class="fill-screen popup-view">
+        <DreamedReality.UI.Views.PauseView name="PauseView" class="fill-screen popup-view">
             <ui:Instance template="PauseView" style="flex-grow: 1;" />
         </DreamedReality.UI.Views.PauseView>
-        <DreamedReality.UI.Views.GameEndView name="GameEndView" picking-mode="Ignore" class="fill-screen popup-view">
+        <DreamedReality.UI.Views.GameEndView name="GameEndView" class="fill-screen popup-view">
             <ui:Instance template="GameEndView" style="flex-grow: 1;" />
         </DreamedReality.UI.Views.GameEndView>
         <DreamedReality.UI.Views.NoteReadView name="NoteReadView" class="fill-screen popup-view">
