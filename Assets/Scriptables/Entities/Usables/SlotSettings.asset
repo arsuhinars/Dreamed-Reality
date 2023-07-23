@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   putItemOffset: {x: 0, y: 0, z: -0.95}
   itemPuttingDuration: 0.5
+  usingSfx: 13

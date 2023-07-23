@@ -15,5 +15,7 @@ namespace DreamedReality.Scriptables
         [Space]
         public float maxSlopeAngle;
         public LayerMask groundMask;
+        [Space]
+        public float footstepsDelay;
     }
 }

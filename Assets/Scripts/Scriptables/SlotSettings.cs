@@ -1,3 +1,4 @@
+using DreamedReality.Managers;
 using UnityEngine;
 
 namespace DreamedReality.Scriptables
@@ -7,5 +8,6 @@ namespace DreamedReality.Scriptables
     {
         public Vector3 putItemOffset;
         public float itemPuttingDuration;
+        public SfxType usingSfx;
     }
 }

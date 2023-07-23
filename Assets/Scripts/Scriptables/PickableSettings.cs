@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DreamedReality.Managers;
+using UnityEngine;
 
 namespace DreamedReality.Scriptables
 {
@@ -8,5 +9,6 @@ namespace DreamedReality.Scriptables
         public Vector3 moveAmplitude;
         public float movePeriod;
         public float rotationPeriod;
+        public SfxType pickupSfx;
     }
 }

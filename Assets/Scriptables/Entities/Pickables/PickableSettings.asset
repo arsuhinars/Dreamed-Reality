@@ -15,3 +15,4 @@ MonoBehaviour:
   moveAmplitude: {x: 0, y: 0.2, z: 0}
   movePeriod: 1
   rotationPeriod: 3
+  pickupSfx: 12

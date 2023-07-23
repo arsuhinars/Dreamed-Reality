@@ -22,3 +22,4 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1
+  footstepsDelay: 0.3

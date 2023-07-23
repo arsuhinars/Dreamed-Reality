@@ -1,3 +1,4 @@
+using DreamedReality.Managers;
 using UnityEngine;
 
 namespace DreamedReality.Scriptables
@@ -8,5 +9,6 @@ namespace DreamedReality.Scriptables
         public int minCodeNumber;
         public int maxCodeNumber;
         public float numberChangeDuration;
+        public SfxType usingSfx;
     }
 }

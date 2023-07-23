@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d93175a94d076345834e8fbea95ab38, type: 3}
+  m_Script: {fileID: 11500000, guid: 53f98065596cc714d842a105be02af05, type: 3}
   m_Name: SlideDoorSettings
   m_EditorClassIdentifier: 
-  slideOffset: {x: 0, y: 3.5, z: 0}
-  slideDuration: 0.8
+  moveOffset: {x: 0, y: 3.5, z: 0}
+  moveDuration: 1
