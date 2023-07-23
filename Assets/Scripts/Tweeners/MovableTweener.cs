@@ -17,7 +17,7 @@ namespace DreamedReality.Tweeners
             m_activeTween?.Kill();
 
             m_activeTween = m_targetTransform.DOLocalMove(
-                m_settings.slideOffset, m_settings.slideDuration
+                m_settings.moveOffset, m_settings.moveDuration
             );
         }
 
@@ -26,7 +26,7 @@ namespace DreamedReality.Tweeners
             m_activeTween?.Kill();
 
             m_activeTween = m_targetTransform.DOLocalMove(
-                Vector3.zero, m_settings.slideDuration
+                Vector3.zero, m_settings.moveDuration
             );
         }
 
