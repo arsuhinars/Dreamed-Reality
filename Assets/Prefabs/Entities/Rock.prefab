@@ -49,6 +49,7 @@ MonoBehaviour:
   m_model: {fileID: 6812339339130919922}
   m_pushOffset: {x: 4.75, y: 0, z: 0}
   m_moveDuration: 2
+  m_moveSfx: 14
 --- !u!1 &4115248469400613584
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +100,9 @@ MonoBehaviour:
   m_disableOnUse: 1
   m_usageHintText: Push a rock
   m_requiredItemTag: 
+  m_tweener:
+    m_value: {fileID: 0}
+  m_usingSfx: 0
   m_onUse:
     m_PersistentCalls:
       m_Calls:

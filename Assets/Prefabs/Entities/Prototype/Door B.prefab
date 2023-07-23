@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6720149954106596007}
   - component: {fileID: 6284123745421703162}
   - component: {fileID: 717273388615053864}
+  - component: {fileID: 688619924742362046}
   m_Layer: 0
   m_Name: Door B
   m_TagString: Untagged
@@ -49,6 +50,8 @@ MonoBehaviour:
   m_initialState: 0
   m_tweener:
     m_value: {fileID: 717273388615053864}
+  m_turnOnSfx: 5
+  m_turnOffSfx: 6
   OnTurnOn:
     m_PersistentCalls:
       m_Calls: []
@@ -69,6 +72,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_settings: {fileID: 11400000, guid: f7561b744e672e844b818c8157daf11d, type: 2}
   m_targetTransform: {fileID: 8070116008555341362}
+--- !u!114 &688619924742362046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4328599985187121781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45aa5cbcd36244e4a9ddef1e60b4683e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sfxType: 4
 --- !u!1 &7439952235889665574
 GameObject:
   m_ObjectHideFlags: 0

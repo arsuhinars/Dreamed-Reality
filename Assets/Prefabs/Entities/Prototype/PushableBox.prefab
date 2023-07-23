@@ -54,6 +54,9 @@ MonoBehaviour:
   m_disableOnUse: 0
   m_usageHintText: Push the box
   m_requiredItemTag: 
+  m_tweener:
+    m_value: {fileID: 0}
+  m_usingSfx: 0
   m_onUse:
     m_PersistentCalls:
       m_Calls:
@@ -455,3 +458,4 @@ MonoBehaviour:
   m_model: {fileID: 5604376045041807059}
   m_pushOffset: {x: 0, y: 0, z: 4}
   m_moveDuration: 1
+  m_moveSfx: 14

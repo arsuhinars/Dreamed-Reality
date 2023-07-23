@@ -53,21 +53,12 @@ MonoBehaviour:
   m_disableOnUse: 0
   m_usageHintText: Click on button
   m_requiredItemTag: 
+  m_tweener:
+    m_value: {fileID: 6330022473581739875}
+  m_usingSfx: 10
   m_onUse:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6330022473581739875}
-        m_TargetAssemblyTypeName: DreamedReality.Tweeners.ButtonTweener, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6330022473581739875
 MonoBehaviour:
   m_ObjectHideFlags: 0

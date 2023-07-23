@@ -73,6 +73,149 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3154032181011200239}
+  - {fileID: 2310769629456872307}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8251309203832491733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2310769629456872307}
+  - component: {fileID: 8638968624966715134}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2310769629456872307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251309203832491733}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7979222130991388026}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8638968624966715134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251309203832491733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c73bab835f6d1d47be2fa6c44852b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioSourcePrefab: {fileID: 7057235155576457706, guid: f4315c295499fc640b99db59cb371e9e, type: 3}
+  m_audioPoolSize: 10
+  m_audioClips:
+  - sfxType: 1
+    randomClips:
+    - {fileID: 8300000, guid: 0aebea24d1eeded4881d88a4c83d02b5, type: 3}
+    volume: 1
+    isSpacial: 0
+    minDistance: 0
+    maxDistance: 0
+  - sfxType: 2
+    randomClips:
+    - {fileID: 8300000, guid: 1a179a6d8bb779143b7d1e79068f039d, type: 3}
+    volume: 1
+    isSpacial: 0
+    minDistance: 0
+    maxDistance: 0
+  - sfxType: 3
+    randomClips:
+    - {fileID: 8300000, guid: 53a3922e0e3d5574bb841912357fffca, type: 3}
+    volume: 1
+    isSpacial: 0
+    minDistance: 0
+    maxDistance: 0
+  - sfxType: 4
+    randomClips:
+    - {fileID: 8300000, guid: b1f528e3a6cc4ce4eab31c610e5de8f9, type: 3}
+    volume: 1
+    isSpacial: 0
+    minDistance: 0
+    maxDistance: 0
+  - sfxType: 5
+    randomClips:
+    - {fileID: 8300000, guid: 7a626a113e8fb0245981d445698f74b0, type: 3}
+    volume: 0.5
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 6
+    randomClips:
+    - {fileID: 8300000, guid: b8bc9b1a716d38a4fac0267ab3d20e79, type: 3}
+    volume: 0.5
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 7
+    randomClips:
+    - {fileID: 8300000, guid: ae2d0f118a7754c4b98ecbe0335551af, type: 3}
+    volume: 0.8
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 9
+    randomClips:
+    - {fileID: 8300000, guid: 85303c114885cb04193d7597aab7694c, type: 3}
+    - {fileID: 8300000, guid: b3d1ad39bb8ff544e8a887f292ee6ee5, type: 3}
+    - {fileID: 8300000, guid: c6a88c172d1a3a941b46272fb5513410, type: 3}
+    - {fileID: 8300000, guid: 6abdb7128d8713e43a072a5eb9255a07, type: 3}
+    volume: 0.2
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 10
+    randomClips:
+    - {fileID: 8300000, guid: 02428213515572c4c96c8532245fffc5, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 11
+    randomClips:
+    - {fileID: 8300000, guid: 1d23c7e1476f30d4c86015a83f1a9c76, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 12
+    randomClips:
+    - {fileID: 8300000, guid: 9920fb0441e4c134a91688d2a1af3aad, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 13
+    randomClips:
+    - {fileID: 8300000, guid: 8e28339bf1c9b124d8c8dc6fac8140f3, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 14
+    randomClips:
+    - {fileID: 8300000, guid: 0d88eaf0f78e0264ca4eb9e28f6f75e6, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  m_ambientSources: []
