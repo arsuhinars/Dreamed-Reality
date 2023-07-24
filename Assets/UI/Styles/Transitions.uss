@@ -1,5 +1,5 @@
 .popup-view {
-    transition-property: opacity;
+    transition-property: opacity, display;
     transition-duration: 0.2s;
 }
 
@@ -17,6 +17,7 @@
 }
 
 .popup-view.view-hidden {
+    display: none;
     opacity: 0;
 }
 
@@ -24,8 +25,9 @@
     scale: 0.9;
 }
 
+
 .fade-view {
-    transition-property: opacity;
+    transition-property: opacity, display;
     transition-duration: 0.2s;
 }
 
@@ -34,5 +36,6 @@
 }
 
 .fade-view.view-hidden {
+    display: none;
     opacity: 0;
 }

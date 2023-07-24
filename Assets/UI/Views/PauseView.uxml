@@ -1,10 +1,18 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement class="background-container">
         <ui:VisualElement class="menu-container popup-target">
-            <ui:Label tabindex="-1" text="Pause" class="text-header" style="margin-bottom: 12px;" />
-            <ui:Button text="Continue" name="ContinueButton" class="btn play-click-sfx" />
-            <ui:Button text="Restart level" name="RestartButton" class="btn play-click-sfx" />
-            <ui:Button text="Quit to menu" name="QuitButton" class="btn play-click-sfx" />
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="pause">
+                <ui:Label tabindex="-1" text="Pause" class="text-header" style="margin-bottom: 12px;" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="continue">
+                <ui:Button text="Continue" name="ContinueButton" class="btn play-click-sfx" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="restartLevel">
+                <ui:Button text="Restart level" name="RestartButton" class="btn play-click-sfx" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
+                <ui:Button text="Quit to menu" name="QuitButton" class="btn play-click-sfx" />
+            </DreamedReality.UI.Elements.TextLocalizer>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
