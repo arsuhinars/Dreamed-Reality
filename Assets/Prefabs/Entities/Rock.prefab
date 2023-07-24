@@ -98,7 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isInitiallyActive: 1
   m_disableOnUse: 1
-  m_usageHintText: Push a rock
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 55282362978304
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_requiredItemTag: 
   m_tweener:
     m_value: {fileID: 0}
@@ -119,6 +127,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!135 &5193485591044135686
 SphereCollider:
   m_ObjectHideFlags: 0

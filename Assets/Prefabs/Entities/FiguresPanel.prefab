@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4833371159585216830}
   - component: {fileID: 5205064059814425258}
   m_Layer: 0
-  m_Name: Slot_Square
+  m_Name: Slot_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,10 +131,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37aa46e3709e8db46858568ca89f8a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Put square
-  m_requiredItemTag: FigureSquare
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54692262154240
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_requiredItemTag: FigureCube
   m_itemModel: {fileID: 7902597305937485650}
   m_settings: {fileID: 11400000, guid: 8996c9a3a6142cb4aa941d376fd14c2e, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &4833371159585216830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -337,7 +348,7 @@ GameObject:
   - component: {fileID: 6875090077020218508}
   - component: {fileID: 5435942620404180614}
   m_Layer: 0
-  m_Name: Slot_Triangle
+  m_Name: Slot_Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,10 +383,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37aa46e3709e8db46858568ca89f8a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Put triangle
-  m_requiredItemTag: FigureTriangle
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54692262154240
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_requiredItemTag: FigurePrism
   m_itemModel: {fileID: 4772664763658495523}
   m_settings: {fileID: 11400000, guid: 8996c9a3a6142cb4aa941d376fd14c2e, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &6875090077020218508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -715,10 +737,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37aa46e3709e8db46858568ca89f8a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Put sphere
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54692262154240
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_requiredItemTag: FigureSphere
   m_itemModel: {fileID: 1499438848139858210}
   m_settings: {fileID: 11400000, guid: 8996c9a3a6142cb4aa941d376fd14c2e, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &172270681348476391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -909,7 +942,7 @@ Transform:
   - {fileID: 945065447963608186}
   - {fileID: 7025930040268469268}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5999305010349612803
 MonoBehaviour:

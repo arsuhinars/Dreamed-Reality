@@ -79,10 +79,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c987809b9b2183042bda5f8b12d372c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Go to bed
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54801297281024
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_bedLevelIndex: 0
   m_teleportTransform: {fileID: 8684333246318546295}
   m_targetBed: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &5435539270574634773
 BoxCollider:
   m_ObjectHideFlags: 0

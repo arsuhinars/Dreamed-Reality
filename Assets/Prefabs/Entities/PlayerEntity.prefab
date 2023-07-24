@@ -402,6 +402,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914c34d49aed4d48b1bd7b459f043ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_requiredItemText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 53740385832960
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_itemsNamesTable: {fileID: 11400000, guid: 24f263aec4a739342933a0da543111f7, type: 2}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2544573363686969811
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -115,7 +115,7 @@ Transform:
   m_Children:
   - {fileID: 4835735736929682327}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &393149457611892084
 MonoBehaviour:
@@ -129,7 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34931ceee7c450499fa4b8e3241eccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Read a note
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54919517933568
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_noteText: 'Sample text
 
     Just for test
@@ -137,6 +145,9 @@ MonoBehaviour:
 
     <style="Strong">Highlighted</style>
     text'
+  references:
+    version: 2
+    RefIds: []
 --- !u!135 &1602256555840910530
 SphereCollider:
   m_ObjectHideFlags: 0

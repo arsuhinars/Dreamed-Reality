@@ -52,7 +52,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isInitiallyActive: 1
   m_disableOnUse: 0
-  m_usageHintText: Push the box
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 55729895215104
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_requiredItemTag: 
   m_tweener:
     m_value: {fileID: 0}
@@ -73,6 +81,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &4932419549299751728
 MonoBehaviour:
   m_ObjectHideFlags: 0

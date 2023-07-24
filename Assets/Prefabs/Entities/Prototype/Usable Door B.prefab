@@ -86,8 +86,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isInitiallyActive: 1
   m_disableOnUse: 0
-  m_usageHintText: Open/Close door
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 55578233376768
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_requiredItemTag: 
+  m_tweener:
+    m_value: {fileID: 0}
+  m_usingSfx: 0
   m_onUse:
     m_PersistentCalls:
       m_Calls:
@@ -103,6 +114,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!135 &2859332373399072208
 SphereCollider:
   m_ObjectHideFlags: 0

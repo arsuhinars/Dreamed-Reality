@@ -48,10 +48,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e07660f4e489014cb7254e65ff28cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_usageHintText: Change digit
+  m_usageHintText:
+    m_TableReference:
+      m_TableCollectionName: GUID:6cbd56b3bb6b2a14480f5a7e5594f240
+    m_TableEntryReference:
+      m_KeyId: 54470446387200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   m_initialCode: 0
   m_settings: {fileID: 11400000, guid: 370bda9f2b551674ca9df238162e596d, type: 2}
   m_displayModel: {fileID: 1089344758586250531}
+  references:
+    version: 2
+    RefIds: []
 --- !u!65 &4267049436554947861
 BoxCollider:
   m_ObjectHideFlags: 0
