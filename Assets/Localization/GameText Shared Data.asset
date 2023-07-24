@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: GameText Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: GameText
+  m_TableCollectionNameGuidString: 6cbd56b3bb6b2a14480f5a7e5594f240
+  m_Entries:
+  - m_Id: 432392605696
+    m_Key: youLose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521383153664
+    m_Key: retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 198694375424
+    m_Key: restartLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 260019294208
+    m_Key: quitToMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53898612736
+    m_Key: pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102623842304
+    m_Key: continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52183443410944
+    m_Key: goldenKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52241572270080
+    m_Key: figurePrism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52461655789568
+    m_Key: figureCube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52522435448832
+    m_Key: figureSphere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53740385832960
+    m_Key: itemRequired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54248035028992
+    m_Key: buttonUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54470446387200
+    m_Key: codeDisplayUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54692262154240
+    m_Key: slotUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54801297281024
+    m_Key: bedUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54919517933568
+    m_Key: noteUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55282362978304
+    m_Key: rockUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55485300183040
+    m_Key: gateUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55578233376768
+    m_Key: doorUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55729895215104
+    m_Key: pushableUseText
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5746417737793798204
+  references:
+    version: 2
+    RefIds:
+    - rid: 5746417737793798204
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1690128205218

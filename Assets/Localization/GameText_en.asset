@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: GameText_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 6cbd56b3bb6b2a14480f5a7e5594f240, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 5746417741301547020
+  m_TableData:
+  - m_Id: 53898612736
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102623842304
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 198694375424
+    m_Localized: Restart level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 260019294208
+    m_Localized: Quit to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 432392605696
+    m_Localized: You lose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 521383153664
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52183443410944
+    m_Localized: Golden key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52241572270080
+    m_Localized: Triangle prism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52461655789568
+    m_Localized: Cube
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52522435448832
+    m_Localized: Sphere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53740385832960
+    m_Localized: <style="Strong">{itemName}</style> is required
+    m_Metadata:
+      m_Items:
+      - rid: 5746417741301547020
+  - m_Id: 54248035028992
+    m_Localized: Click on button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54470446387200
+    m_Localized: Change digit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54692262154240
+    m_Localized: Put figure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54801297281024
+    m_Localized: Go to bed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54919517933568
+    m_Localized: Read note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55282362978304
+    m_Localized: Push a rock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55485300183040
+    m_Localized: Open gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55578233376768
+    m_Localized: Open a door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55729895215104
+    m_Localized: Push
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5746417741301547020
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00909b68e0300000
