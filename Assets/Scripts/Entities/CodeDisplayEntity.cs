@@ -2,16 +2,17 @@ using DG.Tweening;
 using DreamedReality.Managers;
 using DreamedReality.Scriptables;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
     public class CodeDisplayEntity : AbstractUsableEntity
     {
         public int CurrentCode => m_currCode;
-        public override string UsageHintText => m_usageHintText;
+        public override LocalizedString UsageHintText => m_usageHintText;
         public override string RequiredItemTag => string.Empty;
 
-        [SerializeField] private string m_usageHintText;
+        [SerializeField] private LocalizedString m_usageHintText;
         [Space]
         [SerializeField] private int m_initialCode;
         [SerializeField] private CodeDisplaySettings m_settings;

@@ -1,6 +1,7 @@
 using DreamedReality.Controllers;
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
@@ -21,7 +22,7 @@ namespace DreamedReality.Entities
                 }
             }
         }
-        public abstract string UsageHintText { get; }
+        public abstract LocalizedString UsageHintText { get; }
         public abstract string RequiredItemTag { get; }
 
         private bool m_isActive;

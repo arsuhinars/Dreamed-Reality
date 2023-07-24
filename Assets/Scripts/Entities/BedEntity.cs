@@ -1,15 +1,16 @@
 ﻿using DreamedReality.Controllers;
 using DreamedReality.Managers;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
     public class BedEntity : AbstractUsableEntity
     {
-        public override string UsageHintText => m_usageHintText;
+        public override LocalizedString UsageHintText => m_usageHintText;
         public override string RequiredItemTag => string.Empty;
 
-        [SerializeField] private string m_usageHintText;
+        [SerializeField] private LocalizedString m_usageHintText;
         [Space]
         [SerializeField] private int m_bedLevelIndex;
         [SerializeField] private Transform m_teleportTransform;

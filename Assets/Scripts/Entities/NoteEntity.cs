@@ -1,14 +1,15 @@
 using DreamedReality.Managers;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
     public class NoteEntity : AbstractUsableEntity
     {
-        public override string UsageHintText => m_usageHintText;
+        public override LocalizedString UsageHintText => m_usageHintText;
         public override string RequiredItemTag => string.Empty;
 
-        [SerializeField] private string m_usageHintText;
+        [SerializeField] private LocalizedString m_usageHintText;
         [Space]
         [SerializeField, TextArea(5, 10)] private string m_noteText;
 

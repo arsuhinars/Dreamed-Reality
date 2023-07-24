@@ -3,6 +3,7 @@ using DreamedReality.Managers;
 using DreamedReality.Scriptables;
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
@@ -11,10 +12,10 @@ namespace DreamedReality.Entities
         public event Action OnItemPut;
 
         public bool IsItemPut => m_isItemPut;
-        public override string UsageHintText => m_usageHintText;
+        public override LocalizedString UsageHintText => m_usageHintText;
         public override string RequiredItemTag => m_requiredItemTag;
 
-        [SerializeField] private string m_usageHintText;
+        [SerializeField] private LocalizedString m_usageHintText;
         [SerializeField] private string m_requiredItemTag;
         [Space]
         [SerializeField] private GameObject m_itemModel;

@@ -3,6 +3,8 @@ using DreamedReality.Managers;
 using DreamedReality.UI.Elements;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 
 namespace DreamedReality.Controllers
 {
@@ -10,6 +12,9 @@ namespace DreamedReality.Controllers
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerUsablesController : MonoBehaviour
     {
+        [SerializeField] private LocalizedString m_requiredItemText;
+        [SerializeField] private VariablesGroupAsset m_itemsNamesTable;
+
         private PlayerController m_player;
         private PlayerInput m_input;
         private InputAction m_useAction;
@@ -82,12 +87,21 @@ namespace DreamedReality.Controllers
             if (!string.IsNullOrEmpty(itemTag) && !m_player.Inventory.HasItem(itemTag))
             {
                 uiHint.PromptIcon = UIHint.PromptIconType.None;
-                uiHint.Text = $"<style=\"Strong\">{itemTag}</style> is required";
+
+                if (m_itemsNamesTable.TryGetValue(itemTag, out var itemName))
+                {
+                    m_requiredItemText["itemName"] = itemName;
+                    uiHint.Text = m_requiredItemText.GetLocalizedString();
+                }
+                else
+                {
+                    Debug.LogError($"Unable to find name for {itemTag} item tag");
+                }
             }
             else
             {
                 uiHint.PromptIcon = UIHint.PromptIconType.UsePrompt;
-                uiHint.Text = entity.UsageHintText;
+                uiHint.Text = entity.UsageHintText.GetLocalizedString();
             }
 
             uiHint.Show();
