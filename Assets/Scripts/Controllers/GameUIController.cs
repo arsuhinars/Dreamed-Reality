@@ -1,10 +1,11 @@
 using DreamedReality.Managers;
 using DreamedReality.UI.Views;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Controllers
 {
-    public class UIController : MonoBehaviour
+    public class GameUIController : MonoBehaviour
     {
         private NoteReadView m_noteReadView;
 
@@ -16,6 +17,8 @@ namespace DreamedReality.Controllers
             gameManager.OnPause += OnPause;
             gameManager.OnResume += OnResume;
             gameManager.OnReadNote += OnReadNote;
+
+            LevelManager.Instance.OnSceneStartedLoading += OnSceneStartedLoading;
 
             var noteReadView = UIManager.Instance.GetView("NoteReadView");
             m_noteReadView = noteReadView as NoteReadView;
@@ -32,11 +35,17 @@ namespace DreamedReality.Controllers
                 gameManager.OnResume += OnResume;
                 gameManager.OnReadNote -= OnReadNote;
             }
+
+            if (LevelManager.Instance != null)
+            {
+                LevelManager.Instance.OnSceneStartedLoading -= OnSceneStartedLoading;
+            }
         }
 
         private void OnStart()
         {
             UIManager.Instance.SetView("GameView");
+            UIManager.Instance.ScreenFade.StopFade();
         }
 
         private void OnEnd(GameEndReason reason)
@@ -54,10 +63,15 @@ namespace DreamedReality.Controllers
             UIManager.Instance.SetView("GameView");
         }
 
-        private void OnReadNote(string noteText)
+        private void OnReadNote(LocalizedString noteText)
         {
             UIManager.Instance.SetView("NoteReadView");
             m_noteReadView.Text = noteText;
+        }
+
+        private void OnSceneStartedLoading()
+        {
+            UIManager.Instance.SetView("LoadingView");
         }
     }
 }
