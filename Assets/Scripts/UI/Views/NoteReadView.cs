@@ -1,5 +1,6 @@
 using DreamedReality.Managers;
 using DreamedReality.UI.Elements;
+using UnityEngine.Localization;
 using UnityEngine.UIElements;
 
 namespace DreamedReality.UI.Views
@@ -11,19 +12,19 @@ namespace DreamedReality.UI.Views
 
         public new class UxmlFactory : UxmlFactory<NoteReadView> { }
 
-        public string Text
+        public LocalizedString Text
         {
             get => m_text;
             set
             {
                 m_text = value;
-                m_noteTextElement.text = value;
+                m_noteTextElement.LocalizedString = value;
             }
         }
 
-        private string m_text;
+        private LocalizedString m_text;
         private Button m_closeButton;
-        private TextElement m_noteTextElement;
+        private TextLocalizer m_noteTextElement;
 
         public NoteReadView()
         {
@@ -55,10 +56,10 @@ namespace DreamedReality.UI.Views
                 m_closeButton.clicked += OnCloseButtonClicked;
             }
 
-            m_noteTextElement = this.Q<Label>(NOTE_TEXT_NAME);
+            m_noteTextElement = this.Q<TextLocalizer>(NOTE_TEXT_NAME);
             if (m_noteTextElement != null)
             {
-                m_noteTextElement.text = m_text;
+                m_noteTextElement.LocalizedString = m_text;
             }
         }
 

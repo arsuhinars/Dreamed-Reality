@@ -20,6 +20,8 @@ namespace DreamedReality.UI.Elements
 
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {
+                base.Init(ve, bag, cc);
+
                 var textLocalizer = ve as TextLocalizer;
 
                 textLocalizer.TableName = m_TableName.GetValueFromBag(bag, cc);
@@ -32,9 +34,27 @@ namespace DreamedReality.UI.Elements
             get => m_localizedString;
             set
             {
+                if (m_localizedString != null)
+                {
+                    m_localizedString.StringChanged -= UpdateText;
+                }
+
                 m_localizedString = value;
-                m_tableName = value.TableReference;
-                m_entryName = value.TableEntryReference;
+                if (value != null)
+                {
+                    value.StringChanged += UpdateText;
+                    value.RefreshString();
+
+                    m_tableName = value.TableReference;
+                    m_entryName = value.TableEntryReference;
+                }
+                else
+                {
+                    UpdateText(string.Empty);
+
+                    m_tableName = string.Empty;
+                    m_entryName = string.Empty;
+                }
             }
         }
         private string TableName
@@ -62,13 +82,13 @@ namespace DreamedReality.UI.Elements
 
         private void OnAttachToPanel(AttachToPanelEvent ev)
         {
-            UpdateLocalizedString();
-
             foreach (var el in Children())
             {
                 m_textElement = el as TextElement;
                 break;
             }
+
+            UpdateLocalizedString();
         }
 
         private void OnDetachFromPanel(DetachFromPanelEvent ev)
@@ -77,13 +97,13 @@ namespace DreamedReality.UI.Elements
             if (m_localizedString != null)
             {
                 m_localizedString.StringChanged -= UpdateText;
+                m_localizedString = null;
             }
         }
 
         private void UpdateLocalizedString()
         {
-            m_localizedString = new LocalizedString(m_tableName, m_entryName);
-            m_localizedString.StringChanged += UpdateText;
+            LocalizedString = new LocalizedString(m_tableName, m_entryName);
         }
 
         private void UpdateText(string s)

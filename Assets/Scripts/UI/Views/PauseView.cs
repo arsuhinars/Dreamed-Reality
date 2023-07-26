@@ -8,11 +8,13 @@ namespace DreamedReality.UI.Views
     {
         private const string CONTINUE_BUTTON_NAME = "ContinueButton";
         private const string RESTART_BUTTON_NAME = "RestartButton";
+        private const string QUIT_BUTTON_NAME = "QuitButton";
 
         public new class UxmlFactory : UxmlFactory<PauseView> { }
 
         private Button m_continueBtn;
         private Button m_restartBtn;
+        private Button m_quitButton;
 
         public PauseView()
         {
@@ -32,6 +34,12 @@ namespace DreamedReality.UI.Views
             if (m_restartBtn != null)
             {
                 m_restartBtn.clicked += OnRestartButtonClicked;
+            }
+
+            m_quitButton = this.Q<Button>(QUIT_BUTTON_NAME);
+            if (m_quitButton != null)
+            {
+                m_quitButton.clicked += OnQuitButtonClicked;
             }
         }
 
@@ -63,6 +71,14 @@ namespace DreamedReality.UI.Views
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.StartGame();
+            }
+        }
+
+        private void OnQuitButtonClicked()
+        {
+            if (LevelManager.Instance != null)
+            {
+                LevelManager.Instance.LoadMainMenu();
             }
         }
     }

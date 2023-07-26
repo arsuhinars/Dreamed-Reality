@@ -1,4 +1,5 @@
-﻿using UnityEngine.UIElements;
+﻿using UnityEngine.Localization;
+using UnityEngine.UIElements;
 
 namespace DreamedReality.UI.Elements
 {
@@ -37,7 +38,7 @@ namespace DreamedReality.UI.Elements
                 UpdateElements();
             }
         }
-        public string Text
+        public LocalizedString Text
         {
             get => m_text;
             set
@@ -48,14 +49,14 @@ namespace DreamedReality.UI.Elements
         }
 
         private PromptIconType m_promptIcon = PromptIconType.None;
-        private string m_text = string.Empty;
+        private LocalizedString m_text;
 
         private HintState m_state = HintState.None;
         private HintState m_nextState = HintState.None;
         private bool m_isTransitioning = false;
         
         private VisualElement m_promptElement;
-        private TextElement m_textElement;
+        private TextLocalizer m_textElement;
 
         public void Show()
         {
@@ -106,7 +107,7 @@ namespace DreamedReality.UI.Elements
         private void OnAttachToPanel(AttachToPanelEvent ev)
         {
             m_promptElement = this.Q<VisualElement>(HINT_PROMPT_NAME);
-            m_textElement = this.Q<Label>(HINT_TEXT_NAME);
+            m_textElement = this.Q<TextLocalizer>(HINT_TEXT_NAME);
 
             UpdateElements();
 
@@ -161,7 +162,7 @@ namespace DreamedReality.UI.Elements
             if (m_textElement != null)
             {
                 m_textElement.EnableInClassList(HINT_TEXT_USS_CLASS, true);
-                m_textElement.text = m_text;
+                m_textElement.LocalizedString = m_text;
             }
         }
     }
