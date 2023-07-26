@@ -2,7 +2,7 @@
     <ui:VisualElement class="background-container">
         <ui:VisualElement class="menu-container popup-target">
             <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="youLose">
-                <ui:Label tabindex="-1" text="You lose" name="LabelText" class="text-header" style="margin-bottom: 12px;" />
+                <ui:Label tabindex="-1" text="You lose" name="LabelText" class="text-header" />
             </DreamedReality.UI.Elements.TextLocalizer>
             <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="retry">
                 <ui:Button text="Retry" name="RetryButton" class="btn play-click-sfx" />

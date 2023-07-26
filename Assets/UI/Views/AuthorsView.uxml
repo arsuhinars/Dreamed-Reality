@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement class="main-menu-container">
+        <ui:VisualElement class="menu-container popup-target">
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="authors">
+                <ui:Label tabindex="-1" text="Authors" class="text-header" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" class="scroller" style="height: 250px;">
+                <ui:Label tabindex="-1" text="Authors&#10;text" class="text-normal" />
+            </ui:ScrollView>
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
+                <DreamedReality.UI.Elements.NavigationButton text="Quit to menu" tabindex="4" target-view-name="MainMenuView" class="btn play-click-sfx" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

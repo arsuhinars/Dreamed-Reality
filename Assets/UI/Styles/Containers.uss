@@ -22,3 +22,9 @@
     justify-content: space-between;
     padding: 32px;
 }
+
+.main-menu-container {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}

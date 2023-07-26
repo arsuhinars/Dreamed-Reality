@@ -3,13 +3,15 @@
     <ui:VisualElement class="game-container">
         <ui:VisualElement style="flex-direction: row; justify-content: flex-end;">
             <ui:Button name="PauseButton" class="game-btn play-click-sfx">
-                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/pause.png?fileID=21300000&amp;guid=589709d058896fd4daa5a5f2c7c83df9&amp;type=3#pause&apos;);" />
+                <ui:VisualElement class="icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/pause.png?fileID=21300000&amp;guid=589709d058896fd4daa5a5f2c7c83df9&amp;type=3#pause&apos;);" />
             </ui:Button>
         </ui:VisualElement>
         <ui:VisualElement class="game-hint-container">
             <DreamedReality.UI.Elements.UIHint name="GameHint" class="game-hint">
                 <ui:VisualElement name="HintPrompt" class="hint__use-prompt" />
-                <ui:Label name="HintText" tabindex="-1" text="Hint description" class="text-normal" />
+                <DreamedReality.UI.Elements.TextLocalizer name="HintText">
+                    <ui:Label tabindex="-1" text="Hint description" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
             </DreamedReality.UI.Elements.UIHint>
         </ui:VisualElement>
     </ui:VisualElement>

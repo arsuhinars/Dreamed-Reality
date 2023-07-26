@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement class="background-container" style="background-color: rgb(48, 57, 82); justify-content: flex-end;">
+        <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="loading">
+            <ui:Label tabindex="-1" text="Loading..." class="text-header" />
+        </DreamedReality.UI.Elements.TextLocalizer>
+    </ui:VisualElement>
+</ui:UXML>

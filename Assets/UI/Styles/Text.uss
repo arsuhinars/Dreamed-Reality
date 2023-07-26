@@ -1,5 +1,6 @@
 .text-header {
     margin: 0;
+    margin-bottom: 12px;
     font-size: 30px;
     -unity-font-style: bold;
 }

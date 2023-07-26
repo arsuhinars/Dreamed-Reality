@@ -1,0 +1,67 @@
+.dropdown {
+    overflow: visible;
+}
+
+.dropdown .unity-base-popup-field__input {
+    padding: 12px;
+    margin: 0;
+    flex-grow: 1;
+    border-width: 0;
+    border-radius: 8px;
+    background-color: rgb(84, 109, 229);
+    transition-property: scale, background-color;
+    transition-duration: 0.2s;
+}
+
+.dropdown:hover .unity-base-popup-field__input {
+    background-color: rgb(99, 123, 244);
+    scale: 1.02;
+}
+
+.dropdown:active .unity-base-popup-field__input {
+    background-color: rgb(69, 88, 188);
+    scale: 0.98;
+}
+
+.dropdown .unity-base-popup-field__text {
+    margin: 0;
+    font-size: 20px;
+    -unity-text-align: middle-center;
+}
+
+.dropdown .unity-base-popup-field__arrow {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    background-image: url('project://database/Assets/UI/Icons/down.png?fileID=21300000&guid=fedb1bebb2867f64d8644773f635182f&type=3#down');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.unity-base-dropdown__container-outer {
+    border-width: 0;
+}
+
+.unity-base-dropdown__container-inner {
+    border-radius: 8px;
+    border-width: 0;
+    background-color: rgb(84, 109, 229);
+}
+
+.unity-base-dropdown__item {
+    border-radius: 8px;
+    background-color: rgb(84, 109, 229);
+
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.unity-base-dropdown__item:hover {
+    background-color: rgb(99, 123, 244);
+}
+
+.unity-base-dropdown__checkmark {
+    width: 30px;
+    height: 30px;
+    background-image: url('project://database/Assets/UI/Icons/checkmark.png?fileID=21300000&guid=4a0308518f02c5c4a98b4ad566f8b803&type=3#checkmark');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}

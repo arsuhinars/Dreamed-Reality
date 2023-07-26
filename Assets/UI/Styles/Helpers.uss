@@ -5,3 +5,32 @@
     top: 0;
     bottom: 0;
 }
+
+.grid {
+    flex-direction: row;
+}
+
+.grid-col {
+    flex-grow: 1;
+}
+
+.grid-cell {
+    margin: 0;
+    height: 50px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.small-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}

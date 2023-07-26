@@ -1,0 +1,38 @@
+
+.slider {
+    flex-shrink: 1;
+}
+
+.slider .unity-base-slider__tracker {
+    height: 8px;
+    margin-top: -4px;
+    background-color: rgb(69, 88, 188);
+    border-width: 0;
+    border-radius: 4px;
+}
+
+.slider .unity-base-slider__tracker:hover {
+    background-color: rgb(69, 88, 188);
+}
+
+.slider .unity-base-slider__dragger {
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    margin-top: -9px;
+    border-width: 0;
+    border-radius: 9px;
+    background-color: rgb(84, 109, 229);
+
+    transition-property: scale, background-color;
+    transition-duration: 0.08s, 0.2s, 0.2s;
+}
+
+.slider .unity-base-slider__dragger:hover {
+    background-color: rgb(99, 123, 244);
+    scale: 1.2;
+}
+
+.slider .unity-base-slider__dragger-border {
+    display: none;
+}

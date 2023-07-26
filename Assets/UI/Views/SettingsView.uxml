@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement class="main-menu-container">
+        <ui:VisualElement class="menu-container popup-target">
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="settings">
+                <ui:Label tabindex="-1" text="Settings" class="text-header" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <ui:VisualElement class="grid">
+                <ui:VisualElement class="grid-col">
+                    <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="language">
+                        <ui:Label tabindex="-1" text="Language" class="text-normal grid-cell" />
+                    </DreamedReality.UI.Elements.TextLocalizer>
+                    <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="sound">
+                        <ui:Label tabindex="-1" text="Sound" class="text-normal grid-cell" />
+                    </DreamedReality.UI.Elements.TextLocalizer>
+                    <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="music">
+                        <ui:Label tabindex="-1" text="Music" class="text-normal grid-cell" />
+                    </DreamedReality.UI.Elements.TextLocalizer>
+                </ui:VisualElement>
+                <ui:VisualElement class="grid-col" style="width: 150px;">
+                    <ui:DropdownField tabindex="1" name="LanguageDropdown" class="grid-cell dropdown play-click-sfx" />
+                    <ui:VisualElement class="grid-cell">
+                        <ui:VisualElement class="small-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/audioOff.png?fileID=21300000&amp;guid=f9818055e17d23c4c9a95a51b08413c2&amp;type=3#audioOff&apos;);" />
+                        <ui:Slider picking-mode="Ignore" high-value="1" tabindex="2" name="SoundSlider" class="slider play-click-sfx" />
+                        <ui:VisualElement class="small-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/audioOn.png?fileID=21300000&amp;guid=bf14da6811deb494793cd9c80ad3c9b2&amp;type=3#audioOn&apos;);" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="grid-cell">
+                        <ui:VisualElement class="small-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/musicOff.png?fileID=21300000&amp;guid=6cf3a22be2d213043a4ed09dc3c7c067&amp;type=3#musicOff&apos;);" />
+                        <ui:Slider picking-mode="Ignore" high-value="1" tabindex="3" name="MusicSlider" class="slider play-click-sfx" />
+                        <ui:VisualElement class="small-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/musicOn.png?fileID=21300000&amp;guid=80c5553ad6a11544789155ead08e820d&amp;type=3#musicOn&apos;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
+                <DreamedReality.UI.Elements.NavigationButton text="Quit to menu" tabindex="4" target-view-name="MainMenuView" class="btn play-click-sfx" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

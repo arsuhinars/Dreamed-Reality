@@ -3,7 +3,9 @@
     <ui:VisualElement class="background-container">
         <ui:VisualElement class="note-container popup-target">
             <ui:Button name="CloseButton" class="note-btn note__close-btn play-click-sfx" />
-            <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." name="NoteText" class="note-text text-normal" />
+            <DreamedReality.UI.Elements.TextLocalizer name="NoteText">
+                <ui:Label tabindex="-1" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="note-text text-normal" />
+            </DreamedReality.UI.Elements.TextLocalizer>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
