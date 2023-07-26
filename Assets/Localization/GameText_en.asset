@@ -100,6 +100,48 @@ MonoBehaviour:
     m_Localized: Push
     m_Metadata:
       m_Items: []
+  - m_Id: 383503428194304
+    m_Localized: 'Just sample text.
+
+      Nothing to see here.
+
+
+      And some
+      <style="Strong">cool</style> text.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702746879299584
+    m_Localized: New game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702803108139008
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702879389945856
+    m_Localized: Authors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702911883218944
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703043445952512
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703076039888896
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703105605537792
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 992563332616192
+    m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

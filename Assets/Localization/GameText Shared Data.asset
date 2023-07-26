@@ -95,6 +95,42 @@ MonoBehaviour:
     m_Key: pushableUseText
     m_Metadata:
       m_Items: []
+  - m_Id: 383503428194304
+    m_Key: sampleNoteText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702746879299584
+    m_Key: newGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702803108139008
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702879389945856
+    m_Key: authors
+    m_Metadata:
+      m_Items: []
+  - m_Id: 702911883218944
+    m_Key: quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703043445952512
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703076039888896
+    m_Key: sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 703105605537792
+    m_Key: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 992563332616192
+    m_Key: loading
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
