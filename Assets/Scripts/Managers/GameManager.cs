@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace DreamedReality.Managers
 {
@@ -20,7 +21,7 @@ namespace DreamedReality.Managers
         public event Action<GameEndReason> OnEnd;
         public event Action OnPause;
         public event Action OnResume;
-        public event Action<string> OnReadNote;
+        public event Action<LocalizedString> OnReadNote;
 
         public static GameManager Instance { get; private set; } = null;
 
@@ -80,7 +81,7 @@ namespace DreamedReality.Managers
             OnResume?.Invoke();
         }
 
-        public void ReadNote(string noteText)
+        public void ReadNote(LocalizedString noteText)
         {
             m_state = GameState.Paused;
             Time.timeScale = 0f;

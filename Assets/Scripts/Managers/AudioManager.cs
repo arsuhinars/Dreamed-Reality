@@ -15,7 +15,8 @@ namespace DreamedReality.Managers
         ButtonClick,
         CodeSwitch,
         ItemPickup, ItemPut,
-        ObjectPush
+        ObjectPush,
+        GoingToBed
     }
 
     public class AudioManager : MonoBehaviour
@@ -141,9 +142,14 @@ namespace DreamedReality.Managers
         private void Start()
         {
             var gameManager = GameManager.Instance;
-            gameManager.OnStart += OnGameStart;
-            gameManager.OnPause += OnGamePause;
-            gameManager.OnResume += OnGameResume;
+            if (gameManager != null)
+            {
+                gameManager.OnStart += OnGameStart;
+                gameManager.OnPause += OnGamePause;
+                gameManager.OnResume += OnGameResume;
+            }
+
+            LevelManager.Instance.OnSceneStartedLoading += OnSceneStartedLoading;
 
             InitializePool();
             UpdateSourcesVolumes();
@@ -162,6 +168,11 @@ namespace DreamedReality.Managers
                 gameManager.OnStart -= OnGameStart;
                 gameManager.OnPause -= OnGamePause;
                 gameManager.OnResume -= OnGameResume;
+            }
+
+            if (LevelManager.Instance != null)
+            {
+                LevelManager.Instance.OnSceneStartedLoading -= OnSceneStartedLoading;
             }
 
             CleanupPool();
@@ -223,6 +234,14 @@ namespace DreamedReality.Managers
             for (int i = 0; i < m_ambientSources.Length; ++i)
             {
                 m_ambientSources[i].audioSource.UnPause();
+            }
+        }
+
+        private void OnSceneStartedLoading()
+        {
+            for (int i = 0; i < m_ambientSources.Length; ++i)
+            {
+                m_ambientSources[i].audioSource.Pause();
             }
         }
 

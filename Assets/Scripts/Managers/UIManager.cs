@@ -1,26 +1,30 @@
 using DreamedReality.UI.Elements;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 namespace DreamedReality.Managers
 {
     public class UIManager : MonoBehaviour
     {
+        private const string VIEWS_CONTAINER_NAME = "ViewsContainer";
+        private const string HINT_ELEMENT_NAME = "GameHint";
+        private const string FADE_ELEMENT_NAME = "ScreenFade";
+
         private const string USS_SFX_CLICK_CLASS = "play-click-sfx";
         private const string USS_SFX_SWITCH_CLASS = "play-switch-sfx";
 
         public static UIManager Instance { get; private set; } = null;
 
+        public FadeElement ScreenFade => m_screenFade;
         public UIHint UIHint => m_hintElement;
 
         [SerializeField] private UIDocument m_document;
-        [SerializeField] private string m_viewsContainerName;
-        [SerializeField] private string m_hintElementName;
+        [SerializeField] private string m_initialViewName;
 
         private KeyValuePair<string, BaseUIView> m_currView = new("", null);
         private Dictionary<string, BaseUIView> m_viewsByName;
+        private FadeElement m_screenFade;
         private UIHint m_hintElement;
 
         public void SetView(string viewName)
@@ -73,6 +77,11 @@ namespace DreamedReality.Managers
             FindElements();
             AddUISoundHandlers();
             HideAllViews();
+
+            if (!string.IsNullOrEmpty(m_initialViewName))
+            {
+                SetView(m_initialViewName);
+            }
         }
 
         private void OnDestroy()
@@ -85,9 +94,11 @@ namespace DreamedReality.Managers
         
         private void FindElements()
         {
+            var root = m_document.rootVisualElement;
+
             m_viewsByName = new();
 
-            var viewsContainer = m_document.rootVisualElement.Q(m_viewsContainerName);
+            var viewsContainer = root.Q(VIEWS_CONTAINER_NAME);
             foreach (var child in viewsContainer.Children())
             {
                 if (child is not BaseUIView view)
@@ -99,7 +110,8 @@ namespace DreamedReality.Managers
                 m_viewsByName.Add(view.name, view);
             }
 
-            m_hintElement = m_document.rootVisualElement.Q<UIHint>(m_hintElementName);
+            m_hintElement = root.Q<UIHint>(HINT_ELEMENT_NAME);
+            m_screenFade = root.Q<FadeElement>(FADE_ELEMENT_NAME);
         }
 
         private void AddUISoundHandlers()
