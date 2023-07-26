@@ -91,7 +91,7 @@ namespace DreamedReality.Controllers
                 if (m_itemsNamesTable.TryGetValue(itemTag, out var itemName))
                 {
                     m_requiredItemText["itemName"] = itemName;
-                    uiHint.Text = m_requiredItemText.GetLocalizedString();
+                    uiHint.Text = m_requiredItemText;
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace DreamedReality.Controllers
             else
             {
                 uiHint.PromptIcon = UIHint.PromptIconType.UsePrompt;
-                uiHint.Text = entity.UsageHintText.GetLocalizedString();
+                uiHint.Text = entity.UsageHintText;
             }
 
             uiHint.Show();
@@ -109,11 +109,16 @@ namespace DreamedReality.Controllers
 
         private void ClearCurrentUsableEntity()
         {
-            if (m_usableEntity != null)
+            if (m_usableEntity == null)
             {
-                m_usableEntity.OnStateChange -= OnUsableEntityStateChange;
-                m_usableEntity = null;
+                return;
+            }
 
+            m_usableEntity.OnStateChange -= OnUsableEntityStateChange;
+            m_usableEntity = null;
+
+            if (UIManager.Instance != null)
+            {
                 UIManager.Instance.UIHint.Hide();
             }
         }

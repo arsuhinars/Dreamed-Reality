@@ -81,6 +81,7 @@ namespace DreamedReality.Controllers
         private void OnGameStart()
         {
             m_char.Spawn();
+            m_char.IsFreezed = false;
             TeleportTo(m_initialPosition, m_initialRotation);
         }
     }
