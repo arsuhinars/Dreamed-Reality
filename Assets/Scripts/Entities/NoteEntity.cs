@@ -11,7 +11,7 @@ namespace DreamedReality.Entities
 
         [SerializeField] private LocalizedString m_usageHintText;
         [Space]
-        [SerializeField, TextArea(5, 10)] private string m_noteText;
+        [SerializeField] private LocalizedString m_noteText;
 
         protected override void OnUse(GameObject user)
         {

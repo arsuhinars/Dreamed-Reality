@@ -1,6 +1,7 @@
 using DreamedReality.Managers;
 using DreamedReality.Scriptables;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace DreamedReality.Entities
 {
@@ -11,6 +12,11 @@ namespace DreamedReality.Entities
         public Vector2 MoveVector { get => m_moveVec; set => m_moveVec = value; }
         public bool IsGrounded => m_isGrounded;
         public bool IsAlive => m_isAlive;
+        public bool IsFreezed
+        {
+            get => m_isFreezed;
+            set => m_isFreezed = value;
+        }
 
         [SerializeField] private CharacterSettings m_settings;
 
@@ -26,6 +32,7 @@ namespace DreamedReality.Entities
 
         private bool m_isAlive = false;
         private bool m_isGrounded = false;
+        private bool m_isFreezed = false;
         private float m_lowerCapsuleY;
         private Vector3 m_averageGroundNormal;
         private float m_flyTime;
@@ -56,14 +63,14 @@ namespace DreamedReality.Entities
             m_rb.angularVelocity = Vector3.zero;
 
             m_moveVec = Vector2.zero;
-            m_moveRot = rotation.eulerAngles.y;
+            m_moveRot = transform.rotation.eulerAngles.y;
             m_moveTargetRot = m_moveRot;
             m_moveAngleSpeed = 0f;
         }
 
         public void Jump()
         {
-            if (m_isGrounded && GameManager.Instance.IsStarted)
+            if (m_isGrounded && !m_isFreezed && GameManager.Instance.IsStarted)
             {
                 m_rb.AddForce(Vector3.up * m_settings.jumpImpulse, ForceMode.Impulse);
                 m_animator.SetTrigger(m_onJumpParamId);
@@ -161,24 +168,31 @@ namespace DreamedReality.Entities
 
         private void MovementRoutine()
         {
-            m_moveVecLength = m_moveVec.magnitude;
-            if (!Mathf.Approximately(m_moveVecLength, 0f) && m_isGrounded)
+            if (!m_isFreezed)
             {
-                m_moveTargetRot = Mathf.Atan2(m_moveVec.x, m_moveVec.y) * Mathf.Rad2Deg;
+                m_moveVecLength = m_moveVec.magnitude;
+                if (!Mathf.Approximately(m_moveVecLength, 0f) && m_isGrounded)
+                {
+                    m_moveTargetRot = Mathf.Atan2(m_moveVec.x, m_moveVec.y) * Mathf.Rad2Deg;
+                }
+
+                float forceMagnitude = m_isGrounded ? m_settings.maxMoveForce : m_settings.flyMoveForce;
+                m_rb.AddForce(
+                    new Vector3(
+                        m_moveVec.x, 0f, m_moveVec.y
+                    ) * forceMagnitude
+                );
+            }
+            else
+            {
+                m_moveVecLength = 0f;
             }
 
             m_moveRot = Mathf.SmoothDampAngle(
                 m_moveRot, m_moveTargetRot, ref m_moveAngleSpeed, m_settings.rotationSmoothTime
             );
 
-            float forceMagnitude = m_isGrounded ? m_settings.maxMoveForce : m_settings.flyMoveForce;
-
             m_rb.rotation = Quaternion.AngleAxis(m_moveRot, Vector3.up);
-            m_rb.AddForce(
-                new Vector3(
-                    m_moveVec.x, 0f, m_moveVec.y
-                ) * forceMagnitude
-            );
         }
 
         private void DragRoutine()

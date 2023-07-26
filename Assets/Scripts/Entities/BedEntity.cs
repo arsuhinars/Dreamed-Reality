@@ -12,26 +12,58 @@ namespace DreamedReality.Entities
 
         [SerializeField] private LocalizedString m_usageHintText;
         [Space]
-        [SerializeField] private int m_bedLevelIndex;
-        [SerializeField] private Transform m_teleportTransform;
-        [SerializeField] private BedEntity m_targetBed;
+        [Tooltip("Leave negative to disable this feature")]
+        [SerializeField] private int m_targetLevelIndex = -1;
+        [SerializeField] private Transform m_targetTransform;
+        [SerializeField] private int m_targetSubLevelIndex;
 
         protected override void OnUse(GameObject user)
         {
-            if (user.TryGetComponent<PlayerController>(out var player))
+            if (!user.TryGetComponent<PlayerController>(out var player))
             {
-                LevelManager.Instance.SwitchSubLevel(m_targetBed.m_bedLevelIndex);
-
-                player.TeleportTo(
-                    m_targetBed.m_teleportTransform.position,
-                    m_targetBed.m_teleportTransform.rotation
-                );
+                return;
             }
+
+            AudioManager.Instance.PlaySound(
+                SfxType.GoingToBed, transform.position
+            );
+            TeleportPlayer(player);
         }
 
         private void Start()
         {
             IsActive = true;
+        }
+
+        private void TeleportPlayer(PlayerController player)
+        {
+            var screenFade = UIManager.Instance.ScreenFade;
+            screenFade.FadeIn(OnFadeInComplete);
+
+            player.Character.IsFreezed = true;
+
+            void OnFadeInComplete()
+            {
+                if (m_targetLevelIndex < 0)
+                {
+                    LevelManager.Instance.SwitchSubLevel(m_targetSubLevelIndex);
+
+                    player.TeleportTo(
+                        m_targetTransform.position, m_targetTransform.rotation
+                    );
+
+                    screenFade.FadeOut(OnFadeOutComplete);
+                }
+                else
+                {
+                    LevelManager.Instance.LoadLevel(m_targetLevelIndex);
+                }
+            }
+
+            void OnFadeOutComplete()
+            {
+                player.Character.IsFreezed = false;
+            }
         }
     }
 }

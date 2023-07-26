@@ -21,14 +21,14 @@ namespace DreamedReality.Entities
 
         protected override void OnStateChange(bool state, bool isInitial)
         {
-            if (!isActiveAndEnabled)
-            {
-                return;
-            }
-
             if (isInitial)
             {
                 m_pausedPhase = -1f;
+            }
+
+            if (!isActiveAndEnabled)
+            {
+                return;
             }
 
             if (state)
