@@ -142,6 +142,35 @@ MonoBehaviour:
     m_Localized: Loading...
     m_Metadata:
       m_Items: []
+  - m_Id: 1394265185554432
+    m_Localized: Dive under water
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1754027974692864
+    m_Localized: '<style="Header">Diary of an unknown explorer</style>
+
+      
+
+      During
+      expediton in these ruins, I have found strange mechanisms. Their design is
+      very similar to modern code locks. I have managed to find a code in ancient
+      scrolls: <style="Strong">4632</style>
+
+      
+
+      (The note is then cut
+      off)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1784457167867904
+    m_Localized: "<style=\"Header\">Diary of an unknown explorer</style>\r\n\n<size=15px>After
+      I've enter required code, I have entered into unexplored are of these ruins.
+      Here I discovered even more ancient records. The most interesting are ones
+      about that pyramid in the center of desert. We can finally open it! Required
+      colors order is: <color=#EAADED>pink</color>, <color=#8FD3FF>blue</color>,
+      <color=#CDDF6C>green</color>, <color=#FBB954>yellow</color>.</size>\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
