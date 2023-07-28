@@ -17,7 +17,9 @@ namespace DreamedReality.Entities
         [SerializeField] private float m_waitTime;
         [SerializeField] private float m_phaseTime;
 
+        private bool m_wasPaused;
         private float m_pausedPhase;
+        private float m_totalTweenTime;
         private Tween m_tween;
 
         protected override void OnStateChange(bool state, bool isInitial)
@@ -29,7 +31,7 @@ namespace DreamedReality.Entities
 
             if (isInitial)
             {
-                m_pausedPhase = -1f;
+                m_wasPaused = false;
             }
 
             if (state)
@@ -38,10 +40,17 @@ namespace DreamedReality.Entities
             }
             else
             {
+                m_wasPaused = true;
                 m_pausedPhase = m_tween != null ? m_tween.position : 0f;
                 m_tween?.Kill();
                 m_tween = null;
             }
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            m_totalTweenTime = m_fallDuration + m_riseDuration + m_waitTime * 2f;
         }
 
         private void OnEnable()
@@ -79,16 +88,15 @@ namespace DreamedReality.Entities
             sequence.AppendInterval(m_waitTime);
             sequence.SetLoops(-1);
 
-            if (m_pausedPhase >= 0f)
+            if (m_wasPaused)
             {
                 sequence.Goto(m_pausedPhase, true);
-                m_pausedPhase = -1f;
+                m_wasPaused = false;
             }
             else
             {
-                float totalTime = m_fallDuration + m_riseDuration + 2f * m_waitTime;
                 sequence.Goto(
-                    (GameManager.Instance.GameTime + m_phaseTime) % totalTime, true
+                    (GameManager.Instance.GameTime + m_phaseTime) % m_totalTweenTime, true
                 );
             }
 

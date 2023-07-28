@@ -5,7 +5,7 @@ using UnityEngine.Localization;
 
 namespace DreamedReality.Entities
 {
-    public class BedEntity : AbstractUsableEntity
+    public class TeleportEntity : AbstractUsableEntity
     {
         public override LocalizedString UsageHintText => m_usageHintText;
         public override string RequiredItemTag => string.Empty;
@@ -16,6 +16,8 @@ namespace DreamedReality.Entities
         [SerializeField] private int m_targetLevelIndex = -1;
         [SerializeField] private Transform m_targetTransform;
         [SerializeField] private int m_targetSubLevelIndex;
+        [Space]
+        [SerializeField] private SfxType m_usingSfx;
 
         protected override void OnUse(GameObject user)
         {
@@ -24,9 +26,7 @@ namespace DreamedReality.Entities
                 return;
             }
 
-            AudioManager.Instance.PlaySound(
-                SfxType.GoingToBed, transform.position
-            );
+            AudioManager.Instance.PlaySound(m_usingSfx, transform.position);
             TeleportPlayer(player);
         }
 
