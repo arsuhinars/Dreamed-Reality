@@ -16,7 +16,9 @@ namespace DreamedReality.Managers
         CodeSwitch,
         ItemPickup, ItemPut,
         ObjectPush,
-        GoingToBed
+        GoingToBed,
+        StoneWallOpen,
+        WaterSplash
     }
 
     public class AudioManager : MonoBehaviour
