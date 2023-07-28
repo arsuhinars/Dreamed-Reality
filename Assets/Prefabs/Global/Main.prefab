@@ -266,7 +266,21 @@ MonoBehaviour:
   - sfxType: 15
     randomClips:
     - {fileID: 8300000, guid: c9887f5527881be499b71f3dc0ac72ce, type: 3}
-    volume: 0.8
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 16
+    randomClips:
+    - {fileID: 8300000, guid: a1a54a39042f9b14789148e443626219, type: 3}
+    volume: 1
+    isSpacial: 1
+    minDistance: 1
+    maxDistance: 100
+  - sfxType: 17
+    randomClips:
+    - {fileID: 8300000, guid: 2a024d990e7452c429247e762e557994, type: 3}
+    volume: 0.4
     isSpacial: 1
     minDistance: 1
     maxDistance: 100

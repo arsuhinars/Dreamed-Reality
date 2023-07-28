@@ -91,6 +91,7 @@ MonoBehaviour:
   m_targetLevelIndex: -1
   m_targetTransform: {fileID: 0}
   m_targetSubLevelIndex: 0
+  m_usingSfx: 15
   references:
     version: 2
     RefIds: []
