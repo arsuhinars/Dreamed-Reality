@@ -202,22 +202,22 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 7a626a113e8fb0245981d445698f74b0, type: 3}
     volume: 0.5
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 6
     randomClips:
     - {fileID: 8300000, guid: b8bc9b1a716d38a4fac0267ab3d20e79, type: 3}
     volume: 0.5
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 7
     randomClips:
     - {fileID: 8300000, guid: ae2d0f118a7754c4b98ecbe0335551af, type: 3}
     volume: 0.8
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 9
     randomClips:
     - {fileID: 8300000, guid: 85303c114885cb04193d7597aab7694c, type: 3}
@@ -226,62 +226,62 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 6abdb7128d8713e43a072a5eb9255a07, type: 3}
     volume: 0.2
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 10
     randomClips:
     - {fileID: 8300000, guid: 02428213515572c4c96c8532245fffc5, type: 3}
-    volume: 1
+    volume: 0.6
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 11
     randomClips:
     - {fileID: 8300000, guid: 1d23c7e1476f30d4c86015a83f1a9c76, type: 3}
-    volume: 1
+    volume: 0.6
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 12
     randomClips:
     - {fileID: 8300000, guid: 9920fb0441e4c134a91688d2a1af3aad, type: 3}
     volume: 1
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 13
     randomClips:
     - {fileID: 8300000, guid: 8e28339bf1c9b124d8c8dc6fac8140f3, type: 3}
     volume: 1
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 14
     randomClips:
     - {fileID: 8300000, guid: 0d88eaf0f78e0264ca4eb9e28f6f75e6, type: 3}
     volume: 1
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 15
     randomClips:
     - {fileID: 8300000, guid: c9887f5527881be499b71f3dc0ac72ce, type: 3}
     volume: 1
-    isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    isSpacial: 0
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 16
     randomClips:
     - {fileID: 8300000, guid: a1a54a39042f9b14789148e443626219, type: 3}
-    volume: 1
+    volume: 0.5
     isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    minDistance: 10
+    maxDistance: 500
   - sfxType: 17
     randomClips:
     - {fileID: 8300000, guid: 2a024d990e7452c429247e762e557994, type: 3}
-    volume: 0.4
-    isSpacial: 1
-    minDistance: 1
-    maxDistance: 100
+    volume: 0.3
+    isSpacial: 0
+    minDistance: 10
+    maxDistance: 500
   m_ambientSources: []
