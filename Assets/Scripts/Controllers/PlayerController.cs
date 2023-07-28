@@ -76,6 +76,8 @@ namespace DreamedReality.Controllers
             {
                 gameManager.PauseGame();
             }
+
+            AudioManager.Instance.PlaySound(SfxType.UIClick);
         }
 
         private void OnGameStart()

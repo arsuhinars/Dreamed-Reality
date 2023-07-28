@@ -121,7 +121,7 @@ namespace DreamedReality.Managers
 
             source.clip = data.randomClips[idx];
             source.volume = data.volume * SoundsVolume;
-            source.spatialize = data.isSpacial;
+            source.spatialBlend = data.isSpacial ? 1f : 0f;
             source.minDistance = data.minDistance;
             source.maxDistance = data.maxDistance;
             source.transform.position = position;

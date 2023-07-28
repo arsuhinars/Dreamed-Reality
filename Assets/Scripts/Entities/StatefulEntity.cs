@@ -34,7 +34,7 @@ namespace DreamedReality.Entities
 
             if (!isInitial)
             {
-                AudioManager.Instance.PlaySound(state ? m_turnOnSfx : m_turnOffSfx);
+                AudioManager.Instance.PlaySound(state ? m_turnOnSfx : m_turnOffSfx, transform.position);
             }
             else
             {
