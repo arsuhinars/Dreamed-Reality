@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5419e293edc0d9d49b776793dd19b0cb
+guid: 3c431af72971ab645a4fa5c034b2d162
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bed
-    second: {fileID: 2100000, guid: 65aab63d73364a04aa367c5d34fb7e32, type: 2}
+      name: SandyBricks
+    second: {fileID: 2100000, guid: 8f6e3af7ff8504749bec3829a85b1400, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -71,7 +71,7 @@ ModelImporter:
     secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 10
     secondaryUVMinObjectScale: 1
-    secondaryUVPackMargin: 12
+    secondaryUVPackMargin: 4
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
