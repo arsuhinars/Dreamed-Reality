@@ -7,10 +7,18 @@ namespace DreamedReality.Controllers
 {
     public class SlotsController : MonoBehaviour
     {
+        public bool IsActive
+        {
+            get => m_isActive;
+            set => m_isActive = value;
+        }
+
+        [SerializeField] private bool m_isInitiallyActive;
         [SerializeField] private SlotEntity[] m_slots;
         [Space]
         [SerializeField] private UnityEvent m_onItemsPut;
 
+        private bool m_isActive;
         private bool m_areItemsPut;
         
         private void Start()
@@ -33,12 +41,13 @@ namespace DreamedReality.Controllers
 
         private void OnGameStart()
         {
+            m_isActive = m_isInitiallyActive;
             m_areItemsPut = false;
         }
 
         private void CheckSlots()
         {
-            if (m_areItemsPut)
+            if (!m_isActive || m_areItemsPut)
             {
                 return;
             }

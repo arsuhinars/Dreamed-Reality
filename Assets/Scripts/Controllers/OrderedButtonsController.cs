@@ -7,16 +7,24 @@ namespace DreamedReality.Controllers
 {
     public class OrderedButtonsController : MonoBehaviour
     {
+        public bool IsActive
+        {
+            get => m_isActive;
+            set => m_isActive = value;
+        }
+
+        [SerializeField] private bool m_isInitiallyActive;
         [SerializeField] private AbstractUsableEntity[] m_orderedButtons;
         [Space]
         [SerializeField] private UnityEvent m_onActivated;
 
+        private bool m_isActive;
         private bool m_isActivated;
         private int m_lastBtnIdx;
 
         private void OnButtonClick(int buttonIdx)
         {
-            if (m_isActivated)
+            if (m_isActivated || !m_isActive)
             {
                 return;
             }
@@ -60,6 +68,7 @@ namespace DreamedReality.Controllers
 
         private void OnGameStart()
         {
+            m_isActive = m_isInitiallyActive;
             m_isActivated = false;
             m_lastBtnIdx = -1;
         }

@@ -64,8 +64,7 @@ namespace DreamedReality.Controllers
 
         private void HandleUseAction(InputAction.CallbackContext context)
         {
-            if (context.phase != InputActionPhase.Canceled || m_usableEntity == null)
-            {
+            if (context.phase != InputActionPhase.Canceled) {
                 return;
             }
 
@@ -125,7 +124,7 @@ namespace DreamedReality.Controllers
 
         private void TryUseCurrentUsableEntity()
         {
-            if (m_usableEntity == null)
+            if (m_usableEntity == null || m_player.Character.IsFreezed)
             {
                 return;
             }
