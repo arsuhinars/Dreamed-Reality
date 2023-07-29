@@ -15,6 +15,5 @@ MonoBehaviour:
   minLoadingTime: 2
   mainMenuSceneName: MainMenu
   levels:
-  - sceneName: PrototypeLevel
   - sceneName: ForestLevel
   - sceneName: DesertLevel
