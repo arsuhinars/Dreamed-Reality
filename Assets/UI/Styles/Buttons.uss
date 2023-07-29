@@ -21,7 +21,7 @@
     scale: 1.02;
 }
 
-.btn:active {
+.btn:enabled:active {
     border-width: 0;
     background-color: rgb(69, 88, 188);
     scale: 0.98;
