@@ -17,3 +17,4 @@ MonoBehaviour:
   levels:
   - sceneName: ForestLevel
   - sceneName: DesertLevel
+  - sceneName: CruiseLevel
