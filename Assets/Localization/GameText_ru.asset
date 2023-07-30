@@ -184,6 +184,14 @@ MonoBehaviour:
       \u0437\u0435\u043B\u0435\u043D\u044B\u0439, \u0436\u0435\u043B\u0442\u044B\u0439.</style></style>"
     m_Metadata:
       m_Items: []
+  - m_Id: 2537007752122368
+    m_Localized: "\u041B\u0435\u0447\u044C \u043D\u0430 \u0448\u0435\u0437\u043B\u043E\u043D\u0433"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571218835968000
+    m_Localized: Cruise note 1
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

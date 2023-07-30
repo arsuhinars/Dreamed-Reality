@@ -172,6 +172,14 @@ MonoBehaviour:
       colors order is: <style="Strong">pink, blue, green, yellow.</style></style>'
     m_Metadata:
       m_Items: []
+  - m_Id: 2537007752122368
+    m_Localized: Lie on a deck chair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571218835968000
+    m_Localized: Cruise note 1
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

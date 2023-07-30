@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1394265185554432
-    m_Key: dive
+    m_Key: diveUseText
     m_Metadata:
       m_Items: []
   - m_Id: 1754027974692864
@@ -141,6 +141,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1784457167867904
     m_Key: desertNote2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2537007752122368
+    m_Key: deckChairUseText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571218835968000
+    m_Key: cruiseNote1
     m_Metadata:
       m_Items: []
   m_Metadata:
