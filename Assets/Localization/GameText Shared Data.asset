@@ -151,6 +151,14 @@ MonoBehaviour:
     m_Key: cruiseNote1
     m_Metadata:
       m_Items: []
+  - m_Id: 2806349244895232
+    m_Key: cruiseNote2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2929862299586560
+    m_Key: cruiseNote3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
