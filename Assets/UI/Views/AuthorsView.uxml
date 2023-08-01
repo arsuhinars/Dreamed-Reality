@@ -4,12 +4,17 @@
             <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="authors">
                 <ui:Label tabindex="-1" text="Authors" class="text-header" />
             </DreamedReality.UI.Elements.TextLocalizer>
-            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" class="scroller" style="height: 250px;">
-                <ui:Label tabindex="-1" text="Authors&#10;text" class="text-normal" />
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" mouse-wheel-scroll-size="36" class="scroller" style="height: 250px;">
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="authorsText">
+                    <ui:Label tabindex="-1" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
             </ui:ScrollView>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
-                <DreamedReality.UI.Elements.NavigationButton text="Quit to menu" tabindex="4" target-view-name="MainMenuView" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
+            <DreamedReality.UI.Elements.NavigationButton tabindex="0" target-view-name="MainMenuView" class="btn play-click-sfx">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/exitLeft.png?fileID=21300000&amp;guid=d4b1be46ecd1074408cccc5b2de759c9&amp;type=3#exitLeft&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu" class="btn-text">
+                    <ui:Label text="Quit to menu" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </DreamedReality.UI.Elements.NavigationButton>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

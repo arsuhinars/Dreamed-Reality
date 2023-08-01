@@ -1,7 +1,12 @@
 
 .btn {
     padding: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin: 0;
     margin-top: 16px;
+    flex-direction: row;
+    align-items: center;
     border-radius: 16px;
     border-width: 0;
     background-color: rgb(84, 109, 229);
@@ -30,4 +35,28 @@
 .btn:disabled {
     opacity: 1;
     background-color: rgba(48, 57, 82, 0.8);
+}
+
+.btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.btn:disabled .btn-icon {
+    -unity-background-image-tint-color: rgb(160, 160, 160);
+}
+
+.btn-text {
+    flex-grow: 1;
+    margin-left: 16px;
+    margin-right: 30px;
+}
+
+.btn-text Label {
+    padding: 0;
+    margin: 0;
+}
+
+.btn:disabled .btn-text Label {
+    color: rgb(160, 160, 160);
 }

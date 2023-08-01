@@ -4,15 +4,24 @@
             <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="pause">
                 <ui:Label tabindex="-1" text="Pause" class="text-header" />
             </DreamedReality.UI.Elements.TextLocalizer>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="continue">
-                <ui:Button text="Continue" name="ContinueButton" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="restartLevel">
-                <ui:Button text="Restart level" name="RestartButton" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
-                <ui:Button text="Quit to menu" name="QuitButton" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
+            <ui:Button tabindex="0" name="ContinueButton" class="btn play-click-sfx">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/forward.png?fileID=21300000&amp;guid=72a7d28dab1fa5142b6432be018502e0&amp;type=3#forward&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="continue" class="btn-text">
+                    <ui:Label text="Continue" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:Button>
+            <ui:Button tabindex="1" name="RestartButton" class="btn play-click-sfx">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/return.png?fileID=21300000&amp;guid=62c834529878d2144862809acc2ed9bc&amp;type=3#return&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="restartLevel" class="btn-text">
+                    <ui:Label text="Restart level" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:Button>
+            <ui:Button tabindex="2" name="QuitButton" class="btn play-click-sfx">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/home.png?fileID=21300000&amp;guid=a1953feafd856364da2dcb4e2ceb28e2&amp;type=3#home&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu" class="btn-text">
+                    <ui:Label text="Quit to menu" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

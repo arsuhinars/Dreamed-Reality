@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/GameStartView.uss?fileID=7433441132597879392&amp;guid=8cdffef19ca54d44e975a5ae42acd458&amp;type=3#GameStartView" />
+    <ui:VisualElement class="main-menu-container">
+        <ui:VisualElement class="menu-container popup-target" style="width: 450px;">
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="controls">
+                <ui:Label tabindex="-1" text="Controls" class="text-header" />
+            </DreamedReality.UI.Elements.TextLocalizer>
+            <ui:VisualElement class="controls-row">
+                <ui:VisualElement style="width: 150px; height: 90px; background-image: url(&apos;project://database/Assets/UI/Icons/Prompts/keyboardMovementAction.png?fileID=21300000&amp;guid=c9f1db460158b814d977d5fa7ccaf5ed&amp;type=3#keyboardMovementAction&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="controlsMovement" class="controls-text">
+                    <ui:Label tabindex="-1" text="Movement" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:VisualElement>
+            <ui:VisualElement class="controls-row">
+                <ui:VisualElement style="width: 150px; height: 45px; background-image: url(&apos;project://database/Assets/UI/Icons/Prompts/keyboardJumpAction.png?fileID=21300000&amp;guid=159f41c9580c78f40a05c0119b13c51b&amp;type=3#keyboardJumpAction&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="controlsJump" class="controls-text">
+                    <ui:Label tabindex="-1" text="Jump" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:VisualElement>
+            <ui:VisualElement class="controls-row">
+                <ui:VisualElement style="width: 45px; height: 45px; background-image: url(&apos;project://database/Assets/UI/Icons/Prompts/keyboardUseAction.png?fileID=21300000&amp;guid=862ac4eec09c08342ad1fac59d615df3&amp;type=3#keyboardUseAction&apos;); margin-left: 52px; margin-right: 52px;" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="controlsUse" class="controls-text">
+                    <ui:Label tabindex="-1" text="Use" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:VisualElement>
+            <ui:VisualElement class="controls-row">
+                <ui:VisualElement style="width: 45px; height: 45px; background-image: url(&apos;project://database/Assets/UI/Icons/Prompts/keyboardPauseAction.png?fileID=21300000&amp;guid=e3f047029d4928345b3ed213ea1caaec&amp;type=3#keyboardPauseAction&apos;); margin-left: 52px; margin-right: 52px;" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="controlsPause" class="controls-text">
+                    <ui:Label tabindex="-1" text="Pause" class="text-normal" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:VisualElement>
+            <ui:Button name="StartButton" class="btn">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/forward.png?fileID=21300000&amp;guid=72a7d28dab1fa5142b6432be018502e0&amp;type=3#forward&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="startGame" class="btn-text">
+                    <ui:Label text="Start game" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

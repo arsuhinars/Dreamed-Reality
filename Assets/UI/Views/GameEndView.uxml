@@ -1,15 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement class="background-container">
-        <ui:VisualElement class="menu-container popup-target">
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="youLose">
-                <ui:Label tabindex="-1" text="You lose" name="LabelText" class="text-header" />
+    <ui:VisualElement class="background-container" style="background-color: rgb(48, 57, 82);">
+        <ui:VisualElement class="popup-target" style="align-items: center;">
+            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="gameEndText">
+                <ui:Label tabindex="-1" class="text-normal" />
             </DreamedReality.UI.Elements.TextLocalizer>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="retry">
-                <ui:Button text="Retry" name="RetryButton" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
-            <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu">
-                <ui:Button text="Quit to menu" name="QuitButton" class="btn play-click-sfx" />
-            </DreamedReality.UI.Elements.TextLocalizer>
+            <ui:Button tabindex="0" name="QuitButton" class="btn play-click-sfx">
+                <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/home.png?fileID=21300000&amp;guid=a1953feafd856364da2dcb4e2ceb28e2&amp;type=3#home&apos;);" />
+                <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="quitToMenu" class="btn-text">
+                    <ui:Label text="Quit to menu" />
+                </DreamedReality.UI.Elements.TextLocalizer>
+            </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
