@@ -147,6 +147,7 @@ namespace DreamedReality.Managers
             if (gameManager != null)
             {
                 gameManager.OnStart += OnGameStart;
+                gameManager.OnEnd += OnGameEnd;
                 gameManager.OnPause += OnGamePause;
                 gameManager.OnResume += OnGameResume;
             }
@@ -168,6 +169,7 @@ namespace DreamedReality.Managers
             if (gameManager != null)
             {
                 gameManager.OnStart -= OnGameStart;
+                gameManager.OnEnd -= OnGameEnd;
                 gameManager.OnPause -= OnGamePause;
                 gameManager.OnResume -= OnGameResume;
             }
@@ -210,6 +212,14 @@ namespace DreamedReality.Managers
                 var src = m_ambientSources[i].audioSource;
                 src.Stop();
                 src.Play();
+            }
+        }
+
+        private void OnGameEnd(GameEndReason reason)
+        {
+            for (int i = 0; i < m_ambientSources.Length; ++i)
+            {
+                m_ambientSources[i].audioSource.Pause();
             }
         }
 

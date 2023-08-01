@@ -34,6 +34,12 @@ namespace DreamedReality.UI.Elements
             get => m_promptIcon;
             set
             {
+                if (m_isTransitioning)
+                {
+                    m_nextPromptIcon = value;
+                    return;
+                }
+
                 m_promptIcon = value;
                 UpdateElements();
             }
@@ -43,6 +49,12 @@ namespace DreamedReality.UI.Elements
             get => m_text;
             set
             {
+                if (m_isTransitioning)
+                {
+                    m_nextText = value;
+                    return;
+                }
+
                 m_text = value;
                 UpdateElements();
             }
@@ -50,6 +62,8 @@ namespace DreamedReality.UI.Elements
 
         private PromptIconType m_promptIcon = PromptIconType.None;
         private LocalizedString m_text;
+        private PromptIconType? m_nextPromptIcon = null;
+        private LocalizedString m_nextText = null;
 
         private HintState m_state = HintState.None;
         private HintState m_nextState = HintState.None;
@@ -141,6 +155,20 @@ namespace DreamedReality.UI.Elements
                     break;
             }
             m_nextState = HintState.None;
+
+            if (m_nextPromptIcon != null)
+            {
+                m_promptIcon = (PromptIconType)m_nextPromptIcon;
+                m_nextPromptIcon = null;
+            }
+            
+            if (m_nextText != null)
+            {
+                m_text = m_nextText;
+                m_nextText = null;
+            }
+
+            UpdateElements();
         }
 
         private void UpdateElements()
