@@ -177,15 +177,120 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2571218835968000
-    m_Localized: Cruise note 1
+    m_Localized: <style="Paragraph">At this moment I have managed to pick up only
+      first two digits of code. They are <style="Strong">21</style. This old man
+      won't return our stuff after that joke.</style>
     m_Metadata:
       m_Items: []
   - m_Id: 2806349244895232
-    m_Localized: Cruise note 2
+    m_Localized: <style="Paragraph">Somewhy these two blockheads thought that they
+      can just take and hide my stuff. Well, try now to get to yours ones. They will
+      never get that <style="Strong">code</style> is right under the nose.</style>
     m_Metadata:
       m_Items: []
   - m_Id: 2929862299586560
-    m_Localized: Cruise note 3
+    m_Localized: <style="Paragraph">That old man hidden something in his cabin and
+      closed with code locker. All that I have found is that code is somehow connected
+      with <style="Strong">october</style>, i.e. <style="Strong">tenth</style> month
+      of the year.</style>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3252540394934272
+    m_Localized: '<align="center"><style="Paragraph"><style="Header_2">Game-designer,
+      programmer</style>
+
+      arsuhinars
+
+
+
+      <style="Header_2">Animations</style>
+
+      Basic
+      Motions FREE - Kevin Iglesias
+
+
+
+      <style="Header_2">Music</style>
+
+      Loopable
+      Background Music - joshuuu
+
+
+
+      <style="Header_2">Sounds</style>
+
+      Kenney
+
+      JayHu
+
+      muy2149972
+
+      et_graham
+
+      ertfelda
+
+      kangaroovindaloo
+
+      HeyHeyHHere
+
+      InspectorJ
+
+      Diegolar
+
+
+      <style="Header_2">Icons</style>
+
+      Kenney
+
+
+
+      <style="Header_2">Fonts</style>
+
+      Comfortaa
+      - Johan Aakerlund
+
+      Roboto - Christian Robertson
+
+
+
+      <style="Header_2">Plugins</style>
+
+      DOTween
+      - Demigiant</style></align>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3259862789885952
+    m_Localized: '<align="center"><style="Header">Game end</style>
+
+
+      Thank
+      you for playing!
+
+      </align>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276643889811456
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276675972042752
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276718376456192
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276755781259264
+    m_Localized: Use
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276856167731200
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3278340469002240
+    m_Localized: Start game
     m_Metadata:
       m_Items: []
   references:

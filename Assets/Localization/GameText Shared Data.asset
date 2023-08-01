@@ -159,6 +159,38 @@ MonoBehaviour:
     m_Key: cruiseNote3
     m_Metadata:
       m_Items: []
+  - m_Id: 3252540394934272
+    m_Key: authorsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3259862789885952
+    m_Key: gameEndText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276643889811456
+    m_Key: controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276675972042752
+    m_Key: controlsMovement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276718376456192
+    m_Key: controlsJump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276755781259264
+    m_Key: controlsUse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3276856167731200
+    m_Key: controlsPause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3278340469002240
+    m_Key: startGame
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
