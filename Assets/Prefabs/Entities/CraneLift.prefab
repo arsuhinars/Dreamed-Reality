@@ -176,7 +176,7 @@ Transform:
   m_GameObject: {fileID: 8942510464493607912}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.10000002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,11 +197,11 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: a5b34b25e1854454a949204fddeab851, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
+  m_StartAngleFade: 83.94217
+  m_EndAngleFade: 110.28061
   m_UVScale: {x: 1, y: 1}
   m_UVBias: {x: 0, y: 0}
-  m_DecalLayerMask: 4294967295
+  m_DecalLayerMask: 3
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 5.5}
   m_Size: {x: 6, y: 6, z: 11}
@@ -253,6 +253,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 984a4b0d43e873b44979a66d1022edfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 984a4b0d43e873b44979a66d1022edfd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 984a4b0d43e873b44979a66d1022edfd, type: 3}
       propertyPath: m_Name
