@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2571218835968000
     m_Localized: <style="Paragraph">At this moment I have managed to pick up only
-      first two digits of code. They are <style="Strong">21</style. This old man
+      first two digits of code. They are <style="Strong">21</style>. This old man
       won't return our stuff after that joke.</style>
     m_Metadata:
       m_Items: []
@@ -202,19 +202,16 @@ MonoBehaviour:
       arsuhinars
 
 
-
       <style="Header_2">Animations</style>
 
       Basic
       Motions FREE - Kevin Iglesias
 
 
-
       <style="Header_2">Music</style>
 
       Loopable
       Background Music - joshuuu
-
 
 
       <style="Header_2">Sounds</style>
@@ -243,14 +240,12 @@ MonoBehaviour:
       Kenney
 
 
-
       <style="Header_2">Fonts</style>
 
       Comfortaa
       - Johan Aakerlund
 
       Roboto - Christian Robertson
-
 
 
       <style="Header_2">Plugins</style>

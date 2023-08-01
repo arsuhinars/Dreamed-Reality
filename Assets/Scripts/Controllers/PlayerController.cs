@@ -48,6 +48,7 @@ namespace DreamedReality.Controllers
             m_pauseAction.canceled += HandlePauseAction;
 
             GameManager.Instance.OnStart += OnGameStart;
+            GameManager.Instance.OnEnd += OnGameEnd;
         }
 
         private void OnDestroy()
@@ -57,6 +58,7 @@ namespace DreamedReality.Controllers
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.OnStart -= OnGameStart;
+                GameManager.Instance.OnEnd -= OnGameEnd;
             }
         }
 
@@ -85,6 +87,11 @@ namespace DreamedReality.Controllers
             m_char.Spawn();
             m_char.IsFreezed = false;
             TeleportTo(m_initialPosition, m_initialRotation);
+        }
+
+        private void OnGameEnd(GameEndReason reason)
+        {
+            m_char.IsFreezed = true;
         }
     }
 }

@@ -1,7 +1,6 @@
 using DreamedReality.Managers;
 using DreamedReality.Scriptables;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace DreamedReality.Entities
 {
