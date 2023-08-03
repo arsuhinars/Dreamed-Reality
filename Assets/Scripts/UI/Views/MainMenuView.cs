@@ -7,11 +7,13 @@ namespace DreamedReality.UI.Views
 {
     public class MainMenuView : BaseUIView
     {
+        private const string NEW_GAME_BUTTON_NAME = "NewGameButton";
         private const string CONTINUE_BUTTON_NAME = "ContinueButton";
         private const string QUIT_BUTTON_NAME = "QuitButton";
 
         public new class UxmlFactory : UxmlFactory<MainMenuView> { }
 
+        private Button m_newGameBtn;
         private Button m_continueBtn;
         private Button m_quitBtn;
 
@@ -23,8 +25,14 @@ namespace DreamedReality.UI.Views
 
         private void OnAttachToPanel(AttachToPanelEvent ev)
         {
+            m_newGameBtn = this.Q<Button>(NEW_GAME_BUTTON_NAME);
             m_continueBtn = this.Q<Button>(CONTINUE_BUTTON_NAME);
             m_quitBtn = this.Q<Button>(QUIT_BUTTON_NAME);
+
+            if (m_newGameBtn != null)
+            {
+                m_newGameBtn.clicked += OnNewGameButtonClicked;
+            }
 
             if (m_continueBtn != null)
             {
@@ -40,6 +48,12 @@ namespace DreamedReality.UI.Views
 
         private void OnDetachFromPanel(DetachFromPanelEvent ev)
         {
+            if (m_newGameBtn != null)
+            {
+                m_newGameBtn.clicked -= OnNewGameButtonClicked;
+                m_newGameBtn = null;
+            }
+
             if (m_continueBtn != null)
             {
                 m_continueBtn.clicked -= OnContinueButtonClicked;
@@ -64,10 +78,24 @@ namespace DreamedReality.UI.Views
             }
         }
 
+        private void OnNewGameButtonClicked()
+        {
+            ProgressManager.Instance.ClearProgress();
+
+            if (Application.isMobilePlatform)
+            {
+                LevelManager.Instance.LoadLevel(0);
+            }
+            else
+            {
+                UIManager.Instance.SetView("GameStartView");
+            }
+        }
+
         private void OnContinueButtonClicked()
         {
-            var lvlIdx = ProgressManager.Instance.PlayerProgress.maxLevelIndex;
-            LevelManager.Instance.LoadLevel((int)lvlIdx);
+            int lvlIdx = ProgressManager.Instance.PlayerProgress.maxLevelIndex;
+            LevelManager.Instance.LoadLevel(lvlIdx);
         }
 
         private void OnQuitButtonClicked()

@@ -38,7 +38,6 @@ namespace DreamedReality.UI.Views
 
         private void OnStartButtonClick()
         {
-            ProgressManager.Instance.ClearProgress();
             LevelManager.Instance.LoadLevel(0);
         }
     }
