@@ -1,4 +1,5 @@
 using DreamedReality.Entities;
+using DreamedReality.Inputs;
 using DreamedReality.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,7 +25,7 @@ namespace DreamedReality.Controllers
         private Vector3 m_initialPosition;
         private Quaternion m_initialRotation;
 
-        private InputAction m_pauseAction;
+        private StandaloneInputProvider m_inputProvider;
 
         public void TeleportTo(Vector3 position, Quaternion rotation)
         {
@@ -44,8 +45,9 @@ namespace DreamedReality.Controllers
             m_initialPosition = transform.position;
             m_initialRotation = transform.rotation;
 
-            m_pauseAction = m_playerInput.actions.FindAction("Pause");
-            m_pauseAction.canceled += HandlePauseAction;
+            m_inputProvider = new StandaloneInputProvider(m_playerInput.actions);
+            GameInputManager.Instance.RegisterInputProvider(m_inputProvider);
+            GameInputManager.Instance.OnPauseActionRelease += OnPauseActionRelease;
 
             GameManager.Instance.OnStart += OnGameStart;
             GameManager.Instance.OnEnd += OnGameEnd;
@@ -53,7 +55,11 @@ namespace DreamedReality.Controllers
 
         private void OnDestroy()
         {
-            m_pauseAction.canceled -= HandlePauseAction;
+            if (GameInputManager.Instance != null)
+            {
+                GameInputManager.Instance.OnPauseActionRelease -= OnPauseActionRelease;
+                GameInputManager.Instance.UnregisterInputProvider(m_inputProvider);
+            }
 
             if (GameManager.Instance != null)
             {
@@ -62,13 +68,8 @@ namespace DreamedReality.Controllers
             }
         }
 
-        private void HandlePauseAction(InputAction.CallbackContext context)
+        private void OnPauseActionRelease()
         {
-            if (context.phase != InputActionPhase.Canceled)
-            {
-                return;
-            }
-
             var gameManager = GameManager.Instance;
             if (gameManager.IsPaused)
             {

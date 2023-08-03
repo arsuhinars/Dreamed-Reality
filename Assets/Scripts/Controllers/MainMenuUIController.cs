@@ -5,8 +5,11 @@ namespace DreamedReality.Controllers
 {
     public class MainMenuUIController : MonoBehaviour
     {
+        [SerializeField] private int m_defaultFrameRate = 60;
+
         private void Start()
         {
+            Application.targetFrameRate = m_defaultFrameRate;
             Time.timeScale = 1f;
 
             LevelManager.Instance.OnSceneStartedLoading += OnSceneStartedLoading;

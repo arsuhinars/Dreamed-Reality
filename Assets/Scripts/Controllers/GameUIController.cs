@@ -1,3 +1,4 @@
+using DreamedReality.Inputs;
 using DreamedReality.Managers;
 using DreamedReality.UI.Views;
 using UnityEngine;
@@ -7,6 +8,7 @@ namespace DreamedReality.Controllers
 {
     public class GameUIController : MonoBehaviour
     {
+        private MobileInputProvider m_inputProvider;
         private NoteReadView m_noteReadView;
 
         private void Start()
@@ -22,6 +24,11 @@ namespace DreamedReality.Controllers
 
             var noteReadView = UIManager.Instance.GetView("NoteReadView");
             m_noteReadView = noteReadView as NoteReadView;
+
+            var gameView = UIManager.Instance.GetView("GameView") as GameView;
+            m_inputProvider = gameView.CreateMobileInputProvider();
+
+            GameInputManager.Instance.RegisterInputProvider(m_inputProvider);
         }
         
         private void OnDestroy()
@@ -39,6 +46,11 @@ namespace DreamedReality.Controllers
             if (LevelManager.Instance != null)
             {
                 LevelManager.Instance.OnSceneStartedLoading -= OnSceneStartedLoading;
+            }
+
+            if (GameInputManager.Instance != null)
+            {
+                GameInputManager.Instance.UnregisterInputProvider(m_inputProvider);
             }
         }
 

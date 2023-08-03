@@ -1,4 +1,5 @@
 ﻿using DreamedReality.Entities;
+using DreamedReality.Inputs;
 using DreamedReality.Managers;
 using DreamedReality.UI.Elements;
 using UnityEngine;
@@ -16,28 +17,27 @@ namespace DreamedReality.Controllers
         [SerializeField] private VariablesGroupAsset m_itemsNamesTable;
 
         private PlayerController m_player;
-        private PlayerInput m_input;
-        private InputAction m_useAction;
 
         private AbstractUsableEntity m_usableEntity = null;
 
         private void Awake()
         {
             m_player = GetComponent<PlayerController>();
-            m_input = GetComponent<PlayerInput>();
         }
 
         private void Start()
         {
-            m_useAction = m_input.actions.FindAction("Use");
-            m_useAction.canceled += HandleUseAction;
+            GameInputManager.Instance.OnUseActionRelease += OnUseActionRelease;
 
             GameManager.Instance.OnStart += OnGameStart;
         }
 
         private void OnDestroy()
         {
-            m_useAction.canceled -= HandleUseAction;
+            if (GameInputManager.Instance != null)
+            {
+                GameInputManager.Instance.OnUseActionRelease -= OnUseActionRelease;
+            }
 
             if (GameManager.Instance != null)
             {
@@ -62,12 +62,8 @@ namespace DreamedReality.Controllers
             }
         }
 
-        private void HandleUseAction(InputAction.CallbackContext context)
+        private void OnUseActionRelease()
         {
-            if (context.phase != InputActionPhase.Canceled) {
-                return;
-            }
-
             TryUseCurrentUsableEntity();
         }
 
