@@ -30,6 +30,8 @@ namespace DreamedReality.Managers
         public bool IsPaused => m_state == GameState.Paused;
         public float GameTime => Time.time - m_gameStartTime;
 
+        [SerializeField] private int m_defaultFrameRate = 45;
+
         private GameState m_state = GameState.None;
         private float m_gameStartTime;
 
@@ -104,6 +106,8 @@ namespace DreamedReality.Managers
 
         private IEnumerator Start()
         {
+            Application.targetFrameRate = m_defaultFrameRate;
+
             yield return null;
             StartGame();
         }
