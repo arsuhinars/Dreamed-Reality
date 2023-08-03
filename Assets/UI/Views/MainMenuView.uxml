@@ -3,12 +3,12 @@
     <ui:VisualElement class="main-menu-container">
         <ui:VisualElement class="popup-target" style="width: 360px;">
             <ui:Label tabindex="-1" text="Dreamed&#10;Reality" class="game-title" />
-            <DreamedReality.UI.Elements.NavigationButton tabindex="0" target-view-name="GameStartView" class="btn play-click-sfx">
+            <ui:Button tabindex="0" name="NewGameButton" class="btn play-click-sfx">
                 <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/gamepad.png?fileID=21300000&amp;guid=e245dce68ddc9474fb435e22d3421e78&amp;type=3#gamepad&apos;);" />
                 <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="newGame" class="btn-text">
                     <ui:Label text="New game" />
                 </DreamedReality.UI.Elements.TextLocalizer>
-            </DreamedReality.UI.Elements.NavigationButton>
+            </ui:Button>
             <ui:Button tabindex="1" name="ContinueButton" class="btn play-click-sfx">
                 <ui:VisualElement class="btn-icon" style="background-image: url(&apos;project://database/Assets/UI/Icons/save.png?fileID=21300000&amp;guid=160e6c71175b01f45a22d1778eab31c5&amp;type=3#save&apos;);" />
                 <DreamedReality.UI.Elements.TextLocalizer table-name="GameText" entry-name="continue" class="btn-text">
