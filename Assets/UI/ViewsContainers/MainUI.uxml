@@ -4,7 +4,7 @@
     <ui:Template name="SettingsView" src="project://database/Assets/UI/Views/SettingsView.uxml?fileID=9197481963319205126&amp;guid=5f87548536cf5e444a9564c65e2650f3&amp;type=3#SettingsView" />
     <ui:Template name="AuthorsView" src="project://database/Assets/UI/Views/AuthorsView.uxml?fileID=9197481963319205126&amp;guid=79fbbc648d2cbce4bb29ed7bb7df62e5&amp;type=3#AuthorsView" />
     <ui:Template name="LoadingView" src="project://database/Assets/UI/Views/LoadingView.uxml?fileID=9197481963319205126&amp;guid=c6e6563a61b1a7842926573609dcd3e4&amp;type=3#LoadingView" />
-    <ui:VisualElement class="fill-screen" style="background-image: url(&apos;project://database/Assets/Textures/UI/MenuBackground.png?fileID=2800000&amp;guid=398262b59cb1c1d4aa3094c37c6fca27&amp;type=3#MenuBackground&apos;); -unity-background-scale-mode: stretch-to-fill;" />
+    <ui:VisualElement class="fill-screen" style="background-image: url(&apos;project://database/Assets/Textures/UI/MenuBackground.png?fileID=2800000&amp;guid=398262b59cb1c1d4aa3094c37c6fca27&amp;type=3#MenuBackground&apos;); -unity-background-scale-mode: scale-and-crop;" />
     <ui:VisualElement name="ViewsContainer" style="flex-shrink: 0; flex-grow: 1;">
         <DreamedReality.UI.Views.MainMenuView name="MainMenuView" class="fill-screen popup-view">
             <ui:Instance template="MainMenuView" style="flex-grow: 1;" />
